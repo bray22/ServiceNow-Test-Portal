@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ClientSrc\js\view\ContentLibraryView.js - TheHub Client Documentation</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\ClientSrc\res\img\logo-full-115.png" title="TheHub Client Documentation"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/collection.AlertCollection.html">collection.AlertCollection</a></li>
+                                <li><a href="../classes/collection.BroadcastCollection.html">collection.BroadcastCollection</a></li>
+                                <li><a href="../classes/collection.Collection.html">collection.Collection</a></li>
+                                <li><a href="../classes/collection.DesktopCollection.html">collection.DesktopCollection</a></li>
+                                <li><a href="../classes/collection.LayoutCollection.html">collection.LayoutCollection</a></li>
+                                <li><a href="../classes/collection.NewsArticleCollection.html">collection.NewsArticleCollection</a></li>
+                                <li><a href="../classes/collection.NewsCollection.html">collection.NewsCollection</a></li>
+                                <li><a href="../classes/collection.ServiceCollection.html">collection.ServiceCollection</a></li>
+                                <li><a href="../classes/collection.SizeCollection.html">collection.SizeCollection</a></li>
+                                <li><a href="../classes/collection.WidgetCollection.html">collection.WidgetCollection</a></li>
+                                <li><a href="../classes/model.AlertModel.html">model.AlertModel</a></li>
+                                <li><a href="../classes/model.BroadcastModel.html">model.BroadcastModel</a></li>
+                                <li><a href="../classes/model.DesktopModel.html">model.DesktopModel</a></li>
+                                <li><a href="../classes/model.HeartbeatModel.html">model.HeartbeatModel</a></li>
+                                <li><a href="../classes/model.Model.html">model.Model</a></li>
+                                <li><a href="../classes/model.NewsArticleModel.html">model.NewsArticleModel</a></li>
+                                <li><a href="../classes/model.NewsChannelModel.html">model.NewsChannelModel</a></li>
+                                <li><a href="../classes/model.SizeModel.html">model.SizeModel</a></li>
+                                <li><a href="../classes/model.UserModel.html">model.UserModel</a></li>
+                                <li><a href="../classes/model.WidgetLayoutModel.html">model.WidgetLayoutModel</a></li>
+                                <li><a href="../classes/model.WidgetModel.html">model.WidgetModel</a></li>
+                                <li><a href="../classes/Tween.html">Tween</a></li>
+                                <li><a href="../classes/view.AlertMenuView.html">view.AlertMenuView</a></li>
+                                <li><a href="../classes/view.BalloonView.html">view.BalloonView</a></li>
+                                <li><a href="../classes/view.ConfirmationView.html">view.ConfirmationView</a></li>
+                                <li><a href="../classes/view.DesktopMenuView.html">view.DesktopMenuView</a></li>
+                                <li><a href="../classes/view.DesktopOptionsView.html">view.DesktopOptionsView</a></li>
+                                <li><a href="../classes/view.DesktopView.html">view.DesktopView</a></li>
+                                <li><a href="../classes/view.DevMenuView.html">view.DevMenuView</a></li>
+                                <li><a href="../classes/view.ExpirationView.html">view.ExpirationView</a></li>
+                                <li><a href="../classes/view.HtmlModalView.html">view.HtmlModalView</a></li>
+                                <li><a href="../classes/view.HubHelpView.html">view.HubHelpView</a></li>
+                                <li><a href="../classes/view.HubView.html">view.HubView</a></li>
+                                <li><a href="../classes/view.IframeAppmodeView.html">view.IframeAppmodeView</a></li>
+                                <li><a href="../classes/view.IframeModalView.html">view.IframeModalView</a></li>
+                                <li><a href="../classes/view.ModalView.html">view.ModalView</a></li>
+                                <li><a href="../classes/view.NewsChannelList.html">view.NewsChannelList</a></li>
+                                <li><a href="../classes/view.NewsView.html">view.NewsView</a></li>
+                                <li><a href="../classes/view.Router.html">view.Router</a></li>
+                                <li><a href="../classes/view.SearchResultsView.html">view.SearchResultsView</a></li>
+                                <li><a href="../classes/view.ToastView.html">view.ToastView</a></li>
+                                <li><a href="../classes/view.View.html">view.View</a></li>
+                                <li><a href="../classes/view.WalkthroughView.html">view.WalkthroughView</a></li>
+                                <li><a href="../classes/view.WidgetAppmodeView.html">view.WidgetAppmodeView</a></li>
+                                <li><a href="../classes/view.WidgetView.html">view.WidgetView</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Ajax.html">Ajax</a></li>
+                                <li><a href="../modules/AnimHelpers.html">AnimHelpers</a></li>
+                                <li><a href="../modules/App.html">App</a></li>
+                                <li><a href="../modules/ConfirmationView.html">ConfirmationView</a></li>
+                                <li><a href="../modules/Expiration.html">Expiration</a></li>
+                                <li><a href="../modules/HeartBeat.html">HeartBeat</a></li>
+                                <li><a href="../modules/HeatBeat.html">HeatBeat</a></li>
+                                <li><a href="../modules/HtmlModalView.html">HtmlModalView</a></li>
+                                <li><a href="../modules/IframeAppmodeView.html">IframeAppmodeView</a></li>
+                                <li><a href="../modules/IframeModalView.html">IframeModalView</a></li>
+                                <li><a href="../modules/Messaging.html">Messaging</a></li>
+                                <li><a href="../modules/Metrics.html">Metrics</a></li>
+                                <li><a href="../modules/ToastView.html">ToastView</a></li>
+                                <li><a href="../modules/Util.html">Util</a></li>
+                                <li><a href="../modules/WidgetAppmodeView.html">WidgetAppmodeView</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: ClientSrc\js\view\ContentLibraryView.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+* ContentLibraryView.js
+* (FullScreenContentLibraryView) - that&#x27;s just way to big to type out everytime.
+*/
+
+define([&quot;require&quot;, &quot;view/View&quot;, &quot;util/Ajax&quot;, &quot;util/AnimHelpers&quot;, &quot;jquery&quot;, &quot;i18n!nls/Hub&quot;], 
+    function (require, View, Ajax, AnimHelpers, $, Strings) {
+    &quot;use strict&quot;;
+
+    return View.extend({
+
+        /**
+        * defines all events interacting with this view&#x27;s DOM element
+        *
+        * @property events
+        * @namespace view
+        * @readonly
+        * @protected
+        * @type Object
+        */
+        events: {
+            &quot;click .on-close&quot;: &quot;onHide&quot;,
+            &quot;input #clib-search&quot;: &quot;onSearch&quot;,
+            &quot;click .clib-dd-item[data-filter=&#x27;BU&#x27;]&quot;: &quot;onBUFilter&quot;,
+            &quot;click .clib-dd-item[data-filter=&#x27;Role&#x27;]&quot;: &quot;onRoleFilter&quot;,
+            &quot;click #clib-alpha-lbl-txt&quot;: &quot;onAlphaSort&quot;,
+            &quot;click #clib-pop-lbl-txt&quot;: &quot;onPopularitySort&quot;,
+            &quot;click .on-widget-add&quot;: &quot;onAddWidget&quot;,
+            &quot;click .on-widget-appmode&quot;: &quot;onAppmode&quot;,
+            &quot;click .on-widget-help&quot;: &quot;onHelp&quot;,
+            &quot;click .on-access-control&quot;: &quot;onAccessControls&quot;,
+            &quot;focus #clib-search&quot;: &quot;onSearchFocus&quot;
+        },
+
+        /**
+        * init dom and events
+        *
+        * @method initialize
+        * @protected
+        */
+        initialize: function (params) {
+            var app = require(&quot;app&quot;);
+
+            Ajax.GetBUList(function (data) {
+                this.populateBUList(data);
+            }, this);
+
+            Ajax.GetRoleList(function (data) {
+                this.populateRoleList(data);
+            }, this);
+
+            this.populateWidgetList();
+
+            this.$(&quot;[data-toggle=&#x27;tooltip&#x27;]&quot;).tooltip({
+                show: true,
+                trigger: &quot;hover&quot;,
+                container: &quot;body&quot;
+            });
+
+            this.on(&quot;show&quot;, this.onShow, this);
+
+            this.once(&quot;show&quot;, this.onAlphaSort, this);
+
+            this.on(&quot;hide&quot;, this.onHide, this);
+
+            this.on(&quot;toggle&quot;, function (cb) {
+                this.trigger(this.isVisible ? &quot;hide&quot; : &quot;show&quot;, cb);
+            }, this);
+
+            app.UserModel.on(&quot;widget-add&quot;, this.evaluateOnDesktop, this);
+
+            app.UserModel.on(&quot;widget-remove&quot;, this.evaluateOnDesktop, this);
+
+            app.UserModel.on(&quot;desktop-change&quot;, this.evaluateOnDesktop, this);
+
+            this.evaluateOnDesktop();
+        },
+
+        /**
+        * add unique options and populate the BU list
+        *
+        * @param {Array} data
+        *
+        * @method populateBUList
+        * @private
+        */
+        populateBUList: function (data) {
+            var $target = this.$(&quot;#clib-bu-list&quot;);
+
+            data.unshift({
+                Key: &quot;my&quot;,
+                Value: Strings.MyBU
+            });
+
+            data.unshift({
+                Key: &quot;all&quot;,
+                Value: Strings.AllBU
+            });
+
+            _.each(data, function (item) {
+                $target.append(this.template(&quot;ContentLibrary-DD-Item&quot;, _.extend({
+                    Filter: &quot;BU&quot;
+                }, item)));
+            }, this);
+
+            this.$(&quot;#clib-bu-dd-txt&quot;).text(data[0].Value).data(&quot;current&quot;, data[0].Key);
+        },
+
+        /**
+        * add unique options and populate the Role list
+        *
+        * @param {Array} data
+        *
+        * @method populateRoleList
+        * @private
+        */
+        populateRoleList: function (data) {
+            var $target = this.$(&quot;#clib-role-list&quot;);
+
+            data.unshift({
+                Key: &quot;my&quot;,
+                Value: Strings.MyRole
+            });
+
+            data.unshift({
+                Key: &quot;all&quot;,
+                Value: Strings.AllRoles
+            });
+
+            _.each(data, function (item) {
+                $target.append(this.template(&quot;ContentLibrary-DD-Item&quot;, _.extend({
+                    Filter: &quot;Role&quot;
+                }, item)));
+            }, this);
+
+            this.$(&quot;#clib-role-dd-txt&quot;).text(data[0].Value).data(&quot;current&quot;, data[0].Key);
+        },
+
+        /**
+        * populate the list of widgets onto the DOM
+        *
+        * @method populateWidgetList
+        * @private
+        */
+        populateWidgetList: function () {
+            var $target = this.$(&quot;#clib-body-widget-list&quot;),
+                $targetParent = $target.parent(),
+                widgetList = this.model.query();
+
+            $target.detach(); // out of flow manipulation
+
+            _.each(widgetList, function (widgetModel) {
+                var $widget = $(this.template(&quot;ContentLibrary-Widget-Item&quot;, widgetModel.attributes)),
+                    $spinner = $(this.template(&quot;Loading-Spinner&quot;)).prependTo($widget.find(&quot;.clib-item-image&quot;));
+
+                if (widgetModel.get(&quot;SizeCollection&quot;).where({X: 999, Y: 999, Enabled: true}).length === 0) {
+                    $widget.find(&quot;.on-widget-appmode&quot;).remove();
+                }
+
+                if (!widgetModel.getHelpUrl()) {
+                    $widget.find(&quot;.on-widget-help&quot;).remove();
+                }
+
+                widgetModel.once(&quot;change:Icon&quot;, function (model, iconClass, params) {
+                    var $iconEl = $widget.find(&quot;.clib-item-image&quot;);
+
+                    $spinner.remove();
+                    
+                    if (model.get(&quot;ImageUrl&quot;)) {
+                        $iconEl.css(&quot;background-image&quot;, &quot;url(&#x27;&quot; + model.get(&quot;ImageUrl&quot;) + &quot;&#x27;)&quot;);
+                    } else if (iconClass) {
+                        $iconEl.addClass(iconClass)
+                    } else {
+                        $iconEl.css(&quot;background-image&quot;, &quot;url(./res/img/no-icon.png)&quot;);
+                    }
+                }, this);
+
+                $widget.appendTo($target);
+            }, this);
+
+            $targetParent.append($target);
+        },
+
+        /**
+        * iterates the active desktop model and applies &#x27;on-desktop&#x27; indicators to library widgets
+        *
+        * @method evaluateOnDesktop
+        * @private
+        */
+        evaluateOnDesktop: function () {
+            this.$(&quot;.owned&quot;).removeClass(&quot;owned&quot;);
+
+            var activeDesktop = require(&quot;app&quot;).HubView.getActiveDesktopModel();
+
+            if (activeDesktop) {
+                activeDesktop.get(&quot;WidgetCollection&quot;).each(function (widgetModel) {
+                    this.$(&quot;.clib-item[data-pluginid=&#x27;&quot; + widgetModel.get(&quot;PluginId&quot;) + &quot;&#x27;]&quot;).addClass(&quot;owned&quot;);
+                }, this);
+            }
+        },
+
+        /**
+        * used to toggle the animated line for the first time 
+        * (because dimensions are unknown until it&#x27;s visible)
+        *
+        * @property _firstShow
+        * @private
+        */
+        _firstShow: true,
+
+        /**
+        * used to block excessive sorting clicks
+        *
+        * @property _currentSort
+        * @private
+        */
+        _currentSort: &quot;alpha&quot;,
+
+        /**
+        * user clicked the alpha-sorting button
+        *
+        * @method onAlphaSort
+        * @private
+        */
+        onAlphaSort: function () {
+            if (this._currentSort === &quot;alpha&quot; &amp;&amp; !this._firstShow) {
+                return;
+            }
+            this._currentSort = &quot;alpha&quot;;
+
+            this.$(&quot;#clib-alpha-lbl-txt.selected, #clib-pop-lbl-txt.selected&quot;).removeClass(&quot;selected&quot;);
+
+            if (!this._firstShow) {
+                var $target = $(&quot;#clib-alpha-lbl-txt&quot;).addClass(&quot;selected&quot;),
+                    width = $target.width(),
+                    offset = $target.offset(),
+                    padding = parseInt(this.$(&quot;#clib-filters-inner-bottom&quot;).css(&quot;padding-left&quot;).replace(/px/, &quot;&quot;), 10);
+
+                this.$(&quot;#clib-sort-selector-top&quot;).animate({
+                    width: width + &quot;px&quot;,
+                    left: offset.left - this.$el.offset().left - padding
+                }, { duration: 200 });
+            } else {
+                setTimeout($.proxy(function () {
+                    var $target = $(&quot;#clib-alpha-lbl-txt&quot;).addClass(&quot;selected&quot;),
+                        width = $target.width(),
+                        offset = $target.offset(),
+                        padding = parseInt(this.$(&quot;#clib-filters-inner-bottom&quot;).css(&quot;padding-left&quot;).replace(/px/, &quot;&quot;), 10);
+
+                    this.$(&quot;#clib-sort-selector-top&quot;).removeAttr(&quot;style&quot;).css({
+                        width: width + &quot;px&quot;,
+                        left: offset.left - this.$el.offset().left - padding
+                    });
+
+                    this._firstShow = false;
+                }, this), 500);
+            }
+
+            if (!this._firstShow) {
+                this.sortByAlpha();
+            }
+        },
+
+        /**
+        * sort and re-order the widget elements alphabetically
+        *
+        * @method sortByAlpha
+        * @private
+        */
+        sortByAlpha: function () {
+            this.reorderWidgets(this.model.query(this.$(&quot;#clib-search&quot;).val(), 
+                this.getCurrentBUFilter(), 
+                this.getCurrentRoleFilter(),
+                this._currentSort));
+        },
+
+        /**
+        * user clicked the popularity-sorting button
+        *
+        * @method onPopularitySort
+        * @private
+        */
+        onPopularitySort: function () {
+            if (this._currentSort === &quot;popularity&quot; &amp;&amp; !this._firstShow) {
+                return;
+            }
+            this._currentSort = &quot;popularity&quot;;
+
+            this.$(&quot;#clib-alpha-lbl-txt.selected, #clib-pop-lbl-txt.selected&quot;).removeClass(&quot;selected&quot;);
+            
+            if (!this._firstShow) {
+                var $target = $(&quot;#clib-pop-lbl-txt&quot;).addClass(&quot;selected&quot;),
+                    width = $target.width(),
+                    offset = $target.offset(),
+                    padding = parseInt(this.$(&quot;#clib-filters-inner-bottom&quot;).css(&quot;padding-left&quot;).replace(/px/, &quot;&quot;), 10);
+
+                this.$(&quot;#clib-sort-selector-top&quot;).animate({
+                    width: width + &quot;px&quot;,
+                    left: offset.left - this.$el.offset().left - padding
+                }, { duration: 200 });
+            } else {
+                setTimeout($.proxy(function () {
+                    var $target = $(&quot;#clib-pop-lbl-txt&quot;).addClass(&quot;selected&quot;),
+                        width = $target.width(),
+                        offset = $target.offset(),
+                        padding = parseInt(this.$(&quot;#clib-filters-inner-bottom&quot;).css(&quot;padding-left&quot;).replace(/px/, &quot;&quot;), 10);
+
+                    this.$(&quot;#clib-sort-selector-top&quot;).removeAttr(&quot;style&quot;).css({
+                        width: width + &quot;px&quot;,
+                        left: offset.left - this.$el.offset().left - padding
+                    });
+
+                    this._firstShow = false;
+                }, this), 500);
+            }
+
+            if (!this._firstShow) {
+                this.sortByPopularity();
+            }
+        },
+
+        /**
+        * sort and re-order the widget elements based on popularity
+        *
+        * @method sortByPopularity
+        * @private
+        */
+        sortByPopularity: function () {
+            this.reorderWidgets(this.model.query(this.$(&quot;#clib-search&quot;).val(), 
+                this.getCurrentBUFilter(), 
+                this.getCurrentRoleFilter(),
+                this._currentSort));
+        },
+
+        /**
+        * called by the sorting methods - reorders the widgets in the given order
+        *
+        * @param {WidgetModel[]} widgetList
+        *
+        * @method reorderWidgets
+        * @private
+        */
+        reorderWidgets: function (widgetList) {
+            var $target = this.$(&quot;#clib-body-widget-list&quot;),
+                i = widgetList.length -1,
+                $widget;
+
+            for (; i &gt;= 0; i--) {
+                $widget = $target.find(&quot;.clib-item[data-pluginid=&#x27;&quot; + widgetList[i].get(&quot;PluginId&quot;) + &quot;&#x27;]&quot;);
+                if ($widget.length) {
+                    $target.prepend($widget.detach());
+                }
+            }
+        },
+
+        /**
+        * retrieve the value for BU filter, taking &quot;all&quot; and &quot;my&quot; into account
+        *
+        * @return {String}
+        *
+        * @method getCurrentBUFilter
+        * @private
+        */
+        getCurrentBUFilter: function () {
+            var current = this.$(&quot;#clib-bu-dd-txt&quot;).data(&quot;current&quot;);
+
+            if (current === &quot;all&quot;) {
+                current = &quot;&quot;;
+            } else if (current === &quot;my&quot;) {
+                current = require(&quot;app&quot;).UserModel.get(&quot;PrimaryBusinessUnitId&quot;);
+            }
+
+            return current;
+        },
+
+        /**
+        * retrieve the value for Role filter, taking &quot;all&quot; and &quot;my&quot; into account
+        *
+        * @return {String}
+        *
+        * @method getCurrentRoleFilter
+        * @private
+        */
+        getCurrentRoleFilter: function () {
+            var current = this.$(&quot;#clib-role-dd-txt&quot;).data(&quot;current&quot;);
+
+            if (current === &quot;all&quot;) {
+                current = &quot;&quot;;
+            } else if (current = &quot;my&quot;) {
+                current = require(&quot;app&quot;).UserModel.get(&quot;PrimaryRoleId&quot;);
+            }
+
+            return current;
+        },
+
+        /**
+        * user typed a new value in the search field
+        *
+        * @method onSearch
+        * @private
+        */
+        onSearch: function (e) {
+            var $input = this.$(&quot;#clib-search&quot;),
+                val = $input.val(),
+                matches = this.model.query(val, this.getCurrentBUFilter(), this.getCurrentRoleFilter());
+
+            this.showWidgets(matches);
+        },
+
+        /**
+        * user changed the BU filter
+        *
+        * @method onBUFilter
+        * @private
+        */
+        onBUFilter: function (e) {
+            var $target = $(e.target),
+                key = $target.data(&quot;key&quot;);
+
+            this.$(&quot;#clib-bu-dd-txt&quot;).text($target.text()).data(&quot;current&quot;, $target.data(&quot;key&quot;));
+
+            this.showWidgets(this.model.query(this.$(&quot;#clib-search&quot;).val(), 
+                this.getCurrentBUFilter(), this.getCurrentRoleFilter()));
+        },
+
+        /**
+        * user changed the Role filter
+        *
+        * @method onRoleFilter
+        * @private
+        */
+        onRoleFilter: function (e) {
+            var $target = $(e.target),
+                key = $target.data(&quot;key&quot;);
+
+            this.$(&quot;#clib-role-dd-txt&quot;).text($target.text()).data(&quot;current&quot;, $target.data(&quot;key&quot;));
+
+            this.showWidgets(this.model.query(this.$(&quot;#clib-search&quot;).val(), 
+                this.getCurrentBUFilter(), this.getCurrentRoleFilter()));
+        },
+
+        /**
+        * after a search query or filter changes, this will be called to show/hide matching widgets
+        *
+        * @param {WidgetModel[]} matches
+        *
+        * @method showWidgets
+        * @private
+        */
+        showWidgets: function (matches) {
+            this.$(&quot;.clib-item&quot;).hide();
+            _.each(matches, function (widgetModel) {
+                this.$(&quot;.clib-item[data-pluginid=&#x27;&quot; + widgetModel.get(&quot;PluginId&quot;) + &quot;&#x27;]&quot;).show();
+            }, this);
+        },
+
+        /**
+        * add the widget to the desktop
+        *
+        * @method onAddWidget
+        * @private
+        */
+        onAddWidget: function (e) {
+            var id = $(e.target).closest(&quot;.clib-item&quot;).data(&quot;pluginid&quot;),
+                widget = this.model.where({PluginId: id}),
+                app = require(&quot;app&quot;);
+
+            if (widget.length) {
+                this.$(&quot;[data-toggle=&#x27;tooltip&#x27;]&quot;).tooltip(&quot;hide&quot;);
+
+                app.HubView.trigger(&quot;add-widget&quot;, widget[0]);
+            } else if (app.HubModel.get(&quot;Debug&quot;)) {
+                console.error(&quot;ContentLibraryView.onAddWidget() - unable to determine widget&quot;);
+            }
+        },
+
+        /**
+        * open the widget in appmode
+        *
+        * @method onAppmode
+        * @private
+        */
+        onAppmode: function (e) {
+            var id = $(e.target).closest(&quot;.clib-item&quot;).data(&quot;pluginid&quot;),
+                widget = this.model.where({PluginId: id}),
+                app = require(&quot;app&quot;);
+
+            if (widget.length) {
+                this.$(&quot;[data-toggle=&#x27;tooltip&#x27;]&quot;).tooltip(&quot;hide&quot;);
+
+                require([&quot;view/WidgetAppmodeView&quot;], $.proxy(function (WidgetAppmodeView) {
+                    var model = widget[0].clone();
+
+                    new WidgetAppmodeView({
+                        model: model
+                    });
+
+                    this.onHide();
+                }, this));
+
+                app.Metrics.WidgetAppmodeViewed({
+                    pluginId: widget[0].get(&quot;Guid&quot;),
+                    Instanceid: widget[0].get(&quot;InstanceGuid&quot;),
+                    pluginName: widget[0].get(&quot;Name&quot;)
+                });
+            } else if (app.HubModel.get(&quot;Debug&quot;)) {
+                console.error(&quot;ContentLibraryView.onAppmode() - unable to determine widget&quot;);
+            }
+        },
+
+        /**
+        * open the widget&#x27;s help wiki
+        *
+        * @method onHelp
+        * @private
+        */
+        onHelp: function (e) {
+            var id = $(e.target).closest(&quot;.clib-item&quot;).data(&quot;pluginid&quot;),
+                widget = this.model.where({PluginId: id});
+
+            if (widget.length) {
+                this.$(&quot;[data-toggle=&#x27;tooltip&#x27;]&quot;).tooltip(&quot;hide&quot;);
+
+                require([&quot;view/IframeModalView&quot;], function (IframeModalView) {
+                    new IframeModalView({
+                        title: Strings.WidgetHelpModalTitle + widget[0].get(&quot;Name&quot;),
+                        url: widget[0].getHelpUrl()
+                    });
+                });
+            } else if (require(&quot;app&quot;).HubModel.get(&quot;Debug&quot;)) {
+                console.error(&quot;ContentLibraryView.onHelp() - unable to determine widget&quot;);
+            }
+        },
+
+        /**
+        * user clicked the access controls icon
+        *
+        * @method onAccessControls
+        * @private
+        */
+        onAccessControls: function (e) {
+            var id = $(e.target).closest(&quot;.clib-item&quot;).data(&quot;pluginid&quot;),
+                widget = this.model.where({PluginId: id});
+
+            require([&quot;view/IframeModalView&quot;, &quot;util/Environment&quot;], function (IframeModalView, Environment) {
+                new IframeModalView({
+                    title: Strings.AccessControlTitle.replace(/{{ Name }}/g, widget[0].get(&quot;Name&quot;)),
+                    url: Environment + &quot;/OCM_Management/HubAccessControl.aspx?PluginId=&quot; + id
+                });
+            });
+        },
+
+        /**
+        * internally used to block excessive show/hide calls
+        *
+        * @property isVisible
+        * @private
+        */
+        isVisible: false,
+
+
+        /**
+        * cached reference to the desktop-cover
+        *
+        * @property _$backdrop
+        * @private
+        */
+        _$backdrop: undefined,
+
+        /**
+        * animate the Content Library in
+        *
+        * @param {Function} cb - optional on-complete callback
+        *
+        * @method onShow
+        * @private
+        */
+        onShow: function (cb) {
+            if (this.isVisible === true) {
+                return;
+            }
+
+            if (!this._$backdrop) {
+                this._$backdrop = $(&quot;#gridster-backdrop&quot;);
+            }
+
+            this._$backdrop.show()
+                .on(&quot;click.close&quot;, $.proxy(this.onHide, this))
+                .animate({opacity: 0.35}, {duration: 300});
+
+            AnimHelpers.FadeScaleIn(this.$el.show(), function () {
+                this.isVisible = true;
+
+                this.$(&quot;#clib-search&quot;).val(&quot;&quot;).focus();
+
+                $(window).on(&quot;keyup.clescape&quot;, $.proxy(function cb_escapeHandler (e) {
+                    var key = e.which || e.keyCode;
+
+                    if (key === 27) {
+                        this.onHide();
+                    }
+                }, this));
+
+                if (typeof cb === &quot;function&quot;) {
+                    cb();
+                }
+            }, this);
+
+            require(&quot;app&quot;).Metrics.ContentLibraryClicked({});        
+        },
+
+        /**
+        * animate the Content Library out
+        *
+        * @param {Function} cb - optional on-complete callback
+        *
+        * @method onHide
+        * @private
+        */
+        onHide: function (cb) {
+            if (this.isVisible === false) {
+                return;
+            }
+
+            var app = require(&quot;app&quot;);
+
+            if (!this._$backdrop) {
+                this._$backdrop = $(&quot;#gridster-backdrop&quot;);
+            }
+
+            this._$backdrop.animate({opacity: 0}, {
+                duration: 300,
+                complete: $.proxy(function () {
+                    this._$backdrop.hide();
+                }, this)
+            });
+
+            $(window).off(&quot;keyup.clescape&quot;);
+
+            this._$backdrop.off(&quot;click.close&quot;);
+
+            AnimHelpers.FadeScaleOut(this.$el, function () {
+                this.isVisible = false;
+                this.$el.hide();
+                this.$(&quot;#clib-search&quot;).val(&quot;&quot;);
+                this.onSearch();
+                if (typeof cb === &quot;function&quot;) {
+                    cb();
+                }
+            }, this);
+
+            app.Metrics.ContentLibraryClosed({});
+        },
+
+        /**
+        * user just focused the search box - only log the metric
+        *
+        * @method onSearchFocus
+        * @private
+        */
+        onSearchFocus: function () {
+            require(&quot;app&quot;).Metrics.ContentLibrarySearch({});
+        }
+    });
+});
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

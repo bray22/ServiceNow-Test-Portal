@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ClientSrc\js\view\DesktopMenuView.js - TheHub Client Documentation</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\ClientSrc\res\img\logo-full-115.png" title="TheHub Client Documentation"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/collection.AlertCollection.html">collection.AlertCollection</a></li>
+                                <li><a href="../classes/collection.BroadcastCollection.html">collection.BroadcastCollection</a></li>
+                                <li><a href="../classes/collection.Collection.html">collection.Collection</a></li>
+                                <li><a href="../classes/collection.DesktopCollection.html">collection.DesktopCollection</a></li>
+                                <li><a href="../classes/collection.LayoutCollection.html">collection.LayoutCollection</a></li>
+                                <li><a href="../classes/collection.NewsArticleCollection.html">collection.NewsArticleCollection</a></li>
+                                <li><a href="../classes/collection.NewsCollection.html">collection.NewsCollection</a></li>
+                                <li><a href="../classes/collection.ServiceCollection.html">collection.ServiceCollection</a></li>
+                                <li><a href="../classes/collection.SizeCollection.html">collection.SizeCollection</a></li>
+                                <li><a href="../classes/collection.WidgetCollection.html">collection.WidgetCollection</a></li>
+                                <li><a href="../classes/model.AlertModel.html">model.AlertModel</a></li>
+                                <li><a href="../classes/model.BroadcastModel.html">model.BroadcastModel</a></li>
+                                <li><a href="../classes/model.DesktopModel.html">model.DesktopModel</a></li>
+                                <li><a href="../classes/model.HeartbeatModel.html">model.HeartbeatModel</a></li>
+                                <li><a href="../classes/model.Model.html">model.Model</a></li>
+                                <li><a href="../classes/model.NewsArticleModel.html">model.NewsArticleModel</a></li>
+                                <li><a href="../classes/model.NewsChannelModel.html">model.NewsChannelModel</a></li>
+                                <li><a href="../classes/model.SizeModel.html">model.SizeModel</a></li>
+                                <li><a href="../classes/model.UserModel.html">model.UserModel</a></li>
+                                <li><a href="../classes/model.WidgetLayoutModel.html">model.WidgetLayoutModel</a></li>
+                                <li><a href="../classes/model.WidgetModel.html">model.WidgetModel</a></li>
+                                <li><a href="../classes/Tween.html">Tween</a></li>
+                                <li><a href="../classes/view.AlertMenuView.html">view.AlertMenuView</a></li>
+                                <li><a href="../classes/view.BalloonView.html">view.BalloonView</a></li>
+                                <li><a href="../classes/view.ConfirmationView.html">view.ConfirmationView</a></li>
+                                <li><a href="../classes/view.DesktopMenuView.html">view.DesktopMenuView</a></li>
+                                <li><a href="../classes/view.DesktopOptionsView.html">view.DesktopOptionsView</a></li>
+                                <li><a href="../classes/view.DesktopView.html">view.DesktopView</a></li>
+                                <li><a href="../classes/view.DevMenuView.html">view.DevMenuView</a></li>
+                                <li><a href="../classes/view.ExpirationView.html">view.ExpirationView</a></li>
+                                <li><a href="../classes/view.HtmlModalView.html">view.HtmlModalView</a></li>
+                                <li><a href="../classes/view.HubHelpView.html">view.HubHelpView</a></li>
+                                <li><a href="../classes/view.HubView.html">view.HubView</a></li>
+                                <li><a href="../classes/view.IframeAppmodeView.html">view.IframeAppmodeView</a></li>
+                                <li><a href="../classes/view.IframeModalView.html">view.IframeModalView</a></li>
+                                <li><a href="../classes/view.ModalView.html">view.ModalView</a></li>
+                                <li><a href="../classes/view.NewsChannelList.html">view.NewsChannelList</a></li>
+                                <li><a href="../classes/view.NewsView.html">view.NewsView</a></li>
+                                <li><a href="../classes/view.Router.html">view.Router</a></li>
+                                <li><a href="../classes/view.SearchResultsView.html">view.SearchResultsView</a></li>
+                                <li><a href="../classes/view.ToastView.html">view.ToastView</a></li>
+                                <li><a href="../classes/view.View.html">view.View</a></li>
+                                <li><a href="../classes/view.WalkthroughView.html">view.WalkthroughView</a></li>
+                                <li><a href="../classes/view.WidgetAppmodeView.html">view.WidgetAppmodeView</a></li>
+                                <li><a href="../classes/view.WidgetView.html">view.WidgetView</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Ajax.html">Ajax</a></li>
+                                <li><a href="../modules/AnimHelpers.html">AnimHelpers</a></li>
+                                <li><a href="../modules/App.html">App</a></li>
+                                <li><a href="../modules/ConfirmationView.html">ConfirmationView</a></li>
+                                <li><a href="../modules/Expiration.html">Expiration</a></li>
+                                <li><a href="../modules/HeartBeat.html">HeartBeat</a></li>
+                                <li><a href="../modules/HeatBeat.html">HeatBeat</a></li>
+                                <li><a href="../modules/HtmlModalView.html">HtmlModalView</a></li>
+                                <li><a href="../modules/IframeAppmodeView.html">IframeAppmodeView</a></li>
+                                <li><a href="../modules/IframeModalView.html">IframeModalView</a></li>
+                                <li><a href="../modules/Messaging.html">Messaging</a></li>
+                                <li><a href="../modules/Metrics.html">Metrics</a></li>
+                                <li><a href="../modules/ToastView.html">ToastView</a></li>
+                                <li><a href="../modules/Util.html">Util</a></li>
+                                <li><a href="../modules/WidgetAppmodeView.html">WidgetAppmodeView</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: ClientSrc\js\view\DesktopMenuView.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+* DesktopMenuView.js
+*/
+
+define([&quot;require&quot;, &quot;view/View&quot;, &quot;jquery&quot;, &quot;view/IframeAppmodeView&quot;, &quot;i18n!nls/Hub&quot;, &quot;view/DesktopOptionsView&quot;], 
+    function (require, View, $, IframeAppmodeView, Strings, DesktopOptionsView) {
+    &quot;use strict&quot;;
+
+    /**
+    * controls toggling desktops, creating new, sharing, etc...
+    *
+    * @class DesktopMenuView
+    * @constructor
+    * @extends View
+    * @namespace view
+    * @public
+    */
+    return View.extend({
+
+        /**
+        * defines all events interacting with this view&#x27;s DOM element
+        *
+        * @property events
+        * @readonly
+        * @protected
+        * @type Object
+        */
+        events: {
+            &quot;click .on-switch-desktop&quot;: &quot;onSwitchDesktop&quot;,
+            &quot;click #create-desktop-link&quot;: &quot;onCreateDesktop&quot;,
+            &quot;click .on-desktop-options&quot;: &quot;onDesktopOptions&quot;,
+            &quot;click #on-shared-desktops&quot;: &quot;onViewShared&quot;
+        },
+
+        /**
+        * init DOM and events
+        *
+        * @method initialize
+        * @protected
+        */
+        initialize: function (params) {
+            this.$icon = params.$icon;
+
+            this.$currentName = params.$currentName;
+
+            this.initDesktopMenu();
+
+            this.$(&quot;[data-toggle=&#x27;tooltip&#x27;]&quot;).tooltip({
+                container: &quot;body&quot;,
+                trigger: &quot;hover&quot;
+            });
+
+            this.model.on(&quot;add&quot;, this.reInitDesktopMenu, this);
+
+            this.model.on(&quot;remove&quot;, this.onRemoveDesktop, this);
+
+            this.on(&quot;refresh&quot;, this.refreshMenu, this);
+
+            this.model.each(function (desktopModel) {
+                desktopModel.on(&quot;change:IsActive&quot;, this.onActiveChange, this);
+                desktopModel.on(&quot;change:Name&quot;, this.onNameChange, this);
+            }, this);
+
+            this.model.on(&quot;add&quot;, function (desktopModel) {
+                desktopModel.on(&quot;change:IsActive&quot;, this.onActiveChange, this);
+                desktopModel.on(&quot;change:Name&quot;, this.onNameChange, this);
+            }, this);
+        },
+
+        /**
+        * request for the most up-to-date list of desktops, and re-render the menu
+        *
+        * @method refreshMenu
+        * @private
+        */
+        refreshMenu: function () {
+            require([&quot;util/Ajax&quot;], $.proxy(function (Ajax) {
+                Ajax.GetDesktopList(function (collection) {
+                    if (collection) {
+                        collection.each(function (desktopModel) {
+                            var existing = this.model.where({DesktopId: desktopModel.get(&quot;DesktopId&quot;)});
+
+                            if (existing.length) {
+                                existing[0].set(&quot;IsShared&quot;, desktopModel.get(&quot;IsShared&quot;));
+                                existing[0].set(&quot;Group&quot;, desktopModel.get(&quot;Group&quot;));
+                            }
+                        }, this);
+
+                        this.reInitDesktopMenu();
+                    }
+                }, this);
+            }, this));
+        },
+
+        /**
+        * collection callback when a desktop is removed
+        *
+        * @param {DesktopModel} desktopModel
+        *
+        * @method onRemoveDesktop
+        * @private
+        */
+        onRemoveDesktop: function (desktopModel) {
+            var $lineItem = this.$el.find(&quot;.hb-desktop-menu-item[data-desktopid=&#x27;&quot; + desktopModel.get(&quot;DesktopId&quot;) + &quot;&#x27;]&quot;);
+            $lineItem.slideUp(function () {
+                $lineItem.remove();
+            });
+        },
+
+        /**
+        * model callback when a desktop.IsActive changes
+        *
+        * @param {DesktopModel} desktop Model
+        *
+        * @method onActiveChange
+        * @private
+        */
+        onActiveChange: function (desktopModel, active) {
+            if (active) {
+                this.$currentName.text(desktopModel.get(&quot;Name&quot;));
+
+                $(&quot;head title&quot;).text(desktopModel.get(&quot;Name&quot;) + &quot; | &quot; + Strings.TheHubName);
+                
+                if (!desktopModel.get(&quot;ReadOnly&quot;)) {
+                    if (this.switchRequest) {
+                        this.switchRequest.abort();
+                    }
+
+                    require([&quot;util/Ajax&quot;, &quot;app&quot;], $.proxy(function (Ajax, App) {
+                        this.switchRequest = Ajax.SetActiveDesktop(desktopModel.get(&quot;DesktopId&quot;), function (success) {
+                            this.switchRequest = undefined;
+
+                            if (App.HubModel.get(&quot;Debug&quot;)) {
+                                console.log(&quot;%s saved active desktop&quot;, success ? &quot;Successfully&quot; : &quot;Failed to&quot;);
+                            }
+                        }, this);
+                    }, this));
+                }
+            }
+        },
+
+        /**
+        * model callback when desktop.Name changes
+        *
+        * @param {DesktopModel} desktopModel
+        * @param {String} name
+        *
+        * @method onNameChange
+        * @private
+        */
+        onNameChange: function (desktopModel, name) {
+            var $lineItem = this.$el.find(&quot;.hb-desktop-menu-item[data-desktopid=&#x27;&quot; + desktopModel.get(&quot;DesktopId&quot;) + &quot;&#x27;]&quot;);
+            $lineItem.find(&quot;.hb-desktop-menu-item-name&quot;).text(name);
+            if (desktopModel.get(&quot;IsActive&quot;)) {
+                this.$currentName.text(name);
+                $(&quot;head title&quot;).text(desktopModel.get(&quot;Name&quot;) + &quot; | &quot; + Strings.TheHubName);
+            }
+        },
+
+        /**
+        * populate the user&#x27;s desktop menu
+        *
+        * @method initDesktopMenu
+        * @private
+        */
+        initDesktopMenu: function () {
+            var desktops = _.groupBy(this.model.models, function (model) {
+                return model.get(&quot;Group&quot;);
+            });
+
+            var activeDesktop = this.model.where({IsActive: true});
+
+            if (activeDesktop.length) {
+                this.$currentName.text(activeDesktop[0].get(&quot;Name&quot;));
+                $(&quot;head title&quot;).text(activeDesktop[0].get(&quot;Name&quot;) + &quot; | &quot; + Strings.TheHubName);
+            } else if (require(&quot;app&quot;).HubModel.get(&quot;Debug&quot;)) {
+                console.error(&quot;No initial active desktops&quot;);
+            }
+
+            var $menuTarget = this.$(&quot;#desktop-menu-list&quot;);
+
+            // keep the initial order that the server gave us, not groupBy order
+            this.model.each(function (desktopModel) {
+                var group = desktopModel.get(&quot;Group&quot;);
+
+                if (desktops[group]) {
+                    $menuTarget.append(View.prototype.template(&quot;Desktop-Menu-Group&quot;, desktopModel.attributes));
+
+                    _.each(desktops[group], function (desktop) {
+                        var $menuItem = $(View.prototype.template(&quot;Desktop-Menu-Item&quot;, desktop.attributes)).appendTo($menuTarget);
+                        if (desktop.get(&quot;ReadOnly&quot;)) {
+                            $menuItem.find(&quot;.hb-desktop-menu-item-options&quot;).remove();
+                        }
+                    });
+
+                    delete desktops[group];
+                }
+            });
+        },
+
+        /**
+        * when the desktop collection changes, re-render the menu 
+        *
+        * @method reInitDesktopMenu
+        * @private
+        */
+        reInitDesktopMenu: function () {
+            this.undelegateEvents();
+
+            var active = this.model.where({IsActive: true}),
+                activeId = (active.length ? active[0].get(&quot;DesktopId&quot;) : null);
+
+            this.$(&quot;#desktop-menu-list&quot;).children().remove();
+
+            this.initDesktopMenu();
+
+            if (activeId) {
+                var set = this.model.where({DesktopId: activeId});
+                if (set.length) {
+                    set[0].set(&quot;IsActive&quot;, true, {silent: true});
+                }
+            }
+
+            this.delegateEvents();
+        },
+
+        /**
+        * called from the hub view to display the help menu
+        *
+        * @param {Function} cb - callbacks to hubView to remove the global &quot;hide&quot; click handler
+        *
+        * @method show
+        * @public
+        */
+        show: function (cb) {
+            var offset = this.$icon.offset();
+
+            this.close = function () {
+                this.optionsView &amp;&amp; this.optionsView.$el.animate({opacity: 0}, {
+                    duration: 200,
+                    complete: $.proxy(function () {
+                        this.optionsView.remove();
+                        this.optionsView = undefined;
+                    }, this)
+                });
+
+                this.$el.animate({opacity: 0}, {
+                    duration: 200,
+                    complete: $.proxy(function () {
+                        this.$el.hide();
+                        cb &amp;&amp; cb();
+                    }, this)
+                });
+            };
+
+            this.$el.css({
+                top: offset.top + this.$icon.height() + 15,
+                left: offset.left
+            });
+
+            this.$el.show().animate({opacity: 1}, {
+                duration: 200
+            });
+        },
+
+        /**
+        * user clicked the &#x27;switch desktop&#x27; link
+        *
+        * @method onSwitchDesktop
+        * @private
+        */
+        onSwitchDesktop: function (event) {
+            var desktopId = $(event.target).closest(&quot;.hb-desktop-menu-item&quot;).data(&quot;desktopid&quot;),
+                activeDesktop = this.model.where({IsActive: true}),
+                totalWidgets = 0;
+
+            if (activeDesktop.length) {
+                activeDesktop[0].set(&quot;IsActive&quot;, false);
+            }
+
+            // if the user was on a shared-desktop preview - remove it
+            // (selecting a desktop from the shared-desktop menu, does not add to the user&#x27;s collection)
+            $(&quot;.desktop-preview&quot;).remove();
+
+            var nextDesktop = this.model.where({DesktopId: desktopId});
+            if (nextDesktop.length) {
+                nextDesktop[0].set(&quot;IsActive&quot;, true);
+                require(&quot;app&quot;).UserModel.trigger(&quot;desktop-change&quot;, nextDesktop[0]);
+            }
+
+            this.close &amp;&amp; this.close();
+        },
+
+        /**
+        * user clicked &quot;create a new desktop&quot;
+        *
+        * @method createDesktop
+        * @private
+        */
+        onCreateDesktop: function () {
+            if (this.$(&quot;.hb-desktop-name&quot;).length) {
+                return;
+            }
+
+            var $create = $(this.template(&quot;Desktop-Name&quot;));
+
+            $create.find(&quot;.on-confirm&quot;).on(&quot;click.create&quot;, function cb_confirmClick (e) {
+                var name = $create.find(&quot;input&quot;).val();
+                if (name) {
+                    $(this).off(e);
+
+                    require([&quot;app&quot;, &quot;view/ToastView&quot;, &quot;util/Ajax&quot;], function cb_getModules (App, ToastView, Ajax) {
+
+                        Ajax.CreateDesktop(name, function cb_createDesktop (DesktopModel) {
+
+                            $create.find(&quot;[data-toggle=&#x27;tooltip&#x27;]&quot;).tooltip(&quot;hide&quot;);
+
+                            $create.animate({opacity: 0}, {
+                                duration: 300,
+                                complete: function cb_opacityAnimate() {
+                                    $create.slideUp(function cb_slideUp () {
+                                        $create.remove();
+
+                                        if (DesktopModel) {
+                                            App.UserModel.get(&quot;DesktopCollection&quot;).each(function cb_desktopEach (desktop) {
+                                                desktop.set(&quot;IsActive&quot;, false);
+                                            });
+
+                                            App.UserModel.get(&quot;DesktopCollection&quot;).add(DesktopModel);
+
+                                            require(&quot;app&quot;).UserModel.trigger(&quot;desktop-change&quot;, DesktopModel);
+                                        } else {
+                                            new ToastView({
+                                                color: ToastView.prototype.ErrorColor,
+                                                timer: false,
+                                                icon: &quot;fa fa-exclamation-circle&quot;,
+                                                message: Strings.DesktopCreateErrorMessage
+                                            });
+                                        }
+                                    }); // create.slideUp
+                                } // animate.complete
+                            }); // create.animate
+                        }); // Ajax.create()
+                    }); // require()
+                } else {
+                    $create.find(&quot;input&quot;).addClass(&quot;desktop-input-error&quot;).one(&quot;input.removeErrorClass&quot;, function (e) {
+                        $(this).removeClass(&quot;desktop-input-error&quot;);
+                    });
+                }
+            });
+
+            $create.find(&quot;.on-cancel&quot;).one(&quot;click.cancel&quot;, function (e) {
+                $create.find(&quot;[data-toggle=&#x27;tooltip&#x27;]&quot;).tooltip(&quot;hide&quot;);
+                $create.animate({opacity: 0}, {
+                    duration: 300,
+                    complete: function cb_opacityAnimte () {
+                        $create.slideUp(function cb_clideUp () {
+                            $create.remove();
+                        });
+                    }
+                });
+            });
+
+            this.$(&quot;#desktop-menu-list&quot;).prepend($create);
+
+            $create.slideDown();
+
+            $create.find(&quot;[data-toggle=&#x27;tooltip&#x27;]&quot;).tooltip({
+                container: &quot;body&quot;,
+                trigger: &quot;hover&quot;
+            });
+        },
+
+        /**
+        * user clicked the desktop options icon
+        *
+        * @method onDesktopOptions
+        * @private
+        */
+        onDesktopOptions: function (e) {
+            var $target = $(e.target),
+                desktopId = $target.closest(&quot;.hb-desktop-menu-item&quot;).data(&quot;desktopid&quot;),
+                App = require(&quot;app&quot;),
+                desktopModel = this.model.where({DesktopId: desktopId})[0];
+
+            if (this.optionsView) {
+                this.optionsView.remove();
+            }
+
+            if (desktopModel) {
+                this.optionsView = new DesktopOptionsView({
+                    model: desktopModel,
+                    left: this.$el.offset().left + this.$el.width(),
+                    top: $target.offset().top,
+                    $menuItem: $target.closest(&quot;.hb-desktop-menu-item&quot;),
+                    close: $.proxy(function () {
+                        this.optionsView = undefined;
+                    }, this)
+                });
+            } else if (App.HubModel.get(&quot;Debug&quot;)) {
+                console.error(&quot;DesktopMenuView.onDesktopOptions() - unable to determine desktop model&quot;);
+            }
+        },
+
+        /**
+        * user wants to view all of the shared desktops
+        *
+        * @method onViewShared
+        * @private
+        */
+        onViewShared: function () {
+            this.close &amp;&amp; this.close();
+            
+            require([&quot;util/Environment&quot;], function (Environment) {
+                new IframeAppmodeView({
+                    title: Strings.SharedDesktopsTitle,
+                    url: Environment + &quot;/TheHub/SharedDesktops.aspx?isClient=true&quot;
+                });
+            });
+        }
+    });
+});
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
