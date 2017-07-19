@@ -1,0 +1,830 @@
+/*
+* radar-styles.css
+*
+* mandatory prefix: "radar-"
+*/
+
+@-webkit-keyframes radar-loading-spin {
+    0% { 
+        -webkit-transform: rotate(0deg); 
+        -ms-transform: rotate(0deg); 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes radar-loading-spin {
+    0% { 
+        -webkit-transform: rotate(0deg); 
+        -ms-transform: rotate(0deg); 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.radar-loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.radar-loading-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    width: 32px;
+    height: 32px;
+}
+
+.radar-loading-icon {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 0.25rem solid rgba(255, 255, 255, 0.3);
+    border-top-color: #2C95DD;
+    border-width: 0.25rem;
+    -webkit-animation: radar-loading-spin 750ms infinite linear;
+    animation: radar-loading-spin 750ms infinite linear;
+}
+
+.radar-program-config {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0px 5px 0px 5px;
+}
+
+.radar-program-config-inner {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.radar-program-config-divider {
+    margin: 10px 0px 10px 0px;
+    height: 1px;
+    background-color: #999;
+}
+
+.radar-no-appmode-config {
+    padding: 100px;
+    text-align: center;
+}
+
+.radar-no-appmode-config-text {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.radar-program-widget {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.radar-program-widget-inner {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.radar-program-widget-content {
+    display: table-row;
+    height: 100%;
+}
+
+.radar-program-widget-polltime {
+    display: table-row;
+    height: 16px;
+}
+
+.radar-program-widget-content-inner,
+.radar-program-widget-polltime-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.radar-program-widget-content-inner {
+    overflow-y: auto;
+}
+
+.radar-program-widget-chart-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.radar-program-widget-chart-content-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.radar-widget-error {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.radar-widget-error-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    color: #F2ACBB;
+    text-align: center;
+
+}
+
+/**
+* polltime
+*/
+
+.radar-polltime-inner {
+    color: #2C95DD;
+    font-size: 0.75em;
+    text-align: center;
+    border-top: 1px solid #CCC;
+}
+
+.radar-polltime-text {
+    color: #000;
+}
+
+/**
+* Program Chart Selector
+*/
+
+.radar-wizard-step {
+    cursor: pointer;
+}
+
+.radar-chart-selector-column-header {
+    font-weight: bold;
+}
+
+.radar-program-selector-lineitem {
+    border-bottom: 1px solid #999;
+    margin-bottom: 8px;
+}
+
+.radar-chart-selector-archive-txt {
+    display: inline-block;
+}
+
+.radar-chart-selector-archived {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.radar-chart-selector-archived-inner {
+    cursor: pointer;
+}
+
+.radar-chart-selector-modal .modal-body {
+    overflow-y: auto;
+}
+
+.radar-chart-family-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.radar-chart-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.radar-chart-item {
+    width: 115px;
+    margin: 15px;
+}
+
+.radar-chart-item-title {
+    font-weight: bold;
+    font-size: 0.75em;
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.radar-chart-item-content {
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.4);
+    box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.radar-chart-item-img {
+    width: 100px;
+    height: 100px;
+}
+
+.radar-feature-select {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.radar-feature-select-inner {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.radar-feature-select-header {
+    display: table-row;
+}
+
+.radar-feature-select-body {
+    display: table-row;
+    height: 100%;
+}
+
+.radar-feature-select-header-inner,
+.radar-feature-select-body-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.radar-feature-select-body-inner {
+    overflow-y: auto;
+}
+
+.radar-feature-select-header-txt {
+    font-weight: bold;
+}
+
+.radar-program-feature-id {
+    color: #007DB8;
+    cursor: pointer;
+}
+
+.program-feature-select-item {
+    padding: 10px 5px;
+}
+
+.program-feature-id {
+    color: #2C95DD;
+    cursor: pointer;
+}
+
+.radar-cycle-select {
+    width: 100%;
+    height: 100%;
+}
+
+.radar-cycle-list {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.radar-cycle-list-inner {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.radar-cycle-list-header {
+    display: table-row;
+}
+
+.radar-cycle-list-body {
+    display: table-row;
+    height: 100%;
+}
+
+.radar-cycle-list-header-inner,
+.radar-cycle-list-body-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.radar-cycle-list-body-inner {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.radar-cycle-section-title {
+    padding: 10px 0px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.radar-cycle-list-item {
+    padding: 5px 0px;
+}
+
+.radar-cycle-name-txt {
+    color: #2C95DD;
+    cursor: pointer;
+}
+
+.radar-cycle-select-current-cycle {
+    padding-top: 10px;
+}
+
+.radar-cycle-select-current-cycle-txt {
+    color: #2C95DD;
+    cursor: pointer;
+}
+
+/**
+* Builds
+*/
+
+.radar-build-promoted-1x1 {
+    display: none;
+}
+
+.size-1x1 .radar-build-promoted-1x1 {
+    display: block;
+}
+
+.radar-build-promoted-large {
+    display: block;
+    height: 100%;
+    padding: 10px;
+}
+
+.size-1x1 .radar-build-promoted-large {
+    display: none;
+}
+
+.radar-last-promoted-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 25px;
+}
+
+.radar-last-promoted-value {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.7em;
+}
+
+.radar-build-promoted-list-header {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.radar-build-promoted-list {
+    max-height: 75%;
+    overflow-y: auto;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    margin: 10px 0px;
+}
+
+.radar-promoted-builds-line-item {
+    padding: 5px 0px 5px 5px;
+    border-bottom: 1px solid #CCC;
+    font-size: 0.8em;
+}
+
+.radar-promoted-builds-line-item:last-child {
+    border-bottom: none;
+}
+
+.radar-build-promoted-ar-search-input {
+    width: 200px;
+    display: inline-block;
+}
+
+.radar-input-error {
+    border-color: red;
+}
+
+/**
+* Features
+*/
+
+.radar-program-feature-summary {
+    width: 100%;
+    height: 100%;
+}
+
+.radar-program-feature-summary-small {
+    display: none;
+}
+
+.size-1x1 .radar-program-feature-summary-small {
+    display: block;
+}
+
+.radar-program-feature-summary-large {
+    display: block;
+}
+
+.size-1x1 .radar-program-feature-summary-large {
+    display: none;
+}
+
+.radar-fsummary-small-title {
+    text-align: center;
+}
+
+.radar-fsummary-small-bkg {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 30px;
+    bottom: 10px;
+    background-color: #2C95DD;
+}
+
+.radar-fsummary-small-tracked-val {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 18px;
+}
+
+.radar-fsummary-small-tracked-txt {
+    color: #FFF;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.radar-fsummary-table {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.radar-fsummary-cycle {
+    display: table-row;
+}
+
+.radar-fsummary-cycle-inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.radar-fsummary-table-header {
+    display: table-row;
+}
+
+.radar-fsummary-table-header-inner {
+    font-size: 0.9em;
+}
+
+.radar-fsummary-table-list {
+    display: table-row;
+    height: 100%;
+    width: 100%;
+}
+
+.radar-fsummary-table-list-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.radar-fusmmary-list {
+    overflow-y: auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.radar-fsummary-header-txt {
+    font-weight: bold;
+}
+
+.radar-program-feature-summary-large {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.radar-fsummary-header-txt {
+    font-weight: bold;
+}
+
+.radar-fsummary-table-item {
+    font-size: 0.85em;
+    padding: 5px 0px;
+    border-bottom: 1px solid #CCC;
+}
+
+.radar-fsummary-table-item:last-child {
+    border-bottom: none;
+}
+
+.radar-drilldown {
+    color: #2C95DD;
+    cursor: pointer;
+}
+
+/** TEST EST **/
+
+.radar-program-test-est-small {
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.radar-program-test-est-large {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.size-1x1 .radar-program-test-est-small {
+    display: block;
+}
+
+.size-1x1 .radar-program-test-est-large {
+    display: none;
+}
+
+.radar-program-test-est-mostrecent {
+    padding: 10px 0px 10px 0px;
+}
+
+.radar-program-test-est-mostrecentval {
+    padding: 10px 0px 10px 0px;
+    font-size: 2em;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.radar-program-test-est-table {
+    font-size: 0.85em;
+}
+
+.test-est-table-header-img {
+    font-weight: normal;
+}
+
+.radar-program-test-est-table th,
+.radar-program-test-est-table td {
+    padding: 5px;
+    border: 1px solid #CCC;
+    text-align: center;
+}
+
+.radar-program-test-est-table td[data-color='green'] {
+    background-color: #AEF2AC;
+}
+
+.radar-program-test-est-table td[data-color='yellow'] {
+    background-color: #F2E5AC;
+}
+
+.radar-program-test-est-table td[data-color='red'] {
+    background-color: #F2ACBB;
+}
+
+.radar-program-test-est-table td[data-color='purple'] {
+    background-color: #EEACF2;
+}
+
+.test-est-drilldown {
+    cursor: pointer;
+}
+
+.radar-est-drilldown-data {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.radar-est-drilldown-data th,
+.radar-est-drilldown-data td {
+    padding: 5px;
+    border: 1px solid #CCC;
+}
+
+.radar-est-table-corner {
+    min-width: 150px;
+}
+
+/** Test Progress **/
+
+.radar-program-test-progress-no-data {
+    text-align: center;
+    padding-top: 35px;
+}
+
+.radar-program-test-progress-no-data-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.radar-program-test-progress-no-data-cycle {
+    font-size: 1.5em;
+}
+
+
+/** Test CFT **/
+
+.radar-program-test-cft {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.size-1x1 .radar-program-test-cft-header {
+    display: none;
+}
+
+.radar-program-test-cft-header {
+    width: 100%;
+    position: relative;
+    padding: 5px 10px;
+}
+
+.radar-program-test-cft-body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    flex: 1;
+    flex-basis: 100%;
+}
+
+.radar-program-test-cft-body-inner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.radar-program-test-header-option {
+    padding: 5px 10px;
+    color: #999;
+    font-weight: bold;
+    border-right: 1px solid #000;
+    cursor: pointer;
+}
+
+.radar-program-test-header-option:last-child {
+    border-right: none;
+}
+
+.radar-program-test-header-option.selected {
+    color: #000;
+}
+
+.radar-program-test-header-underline-container {
+    width: 100%;
+    height: 15px;
+    position: relative;
+}
+
+.radar-program-test-header-underline {
+    position: absolute;
+    display: inline-block;
+    width: 10px; /* dynamically set */
+    left: 0px; /* dynamically set */
+    transition: width 200ms ease-in-out,
+        left 200ms ease-in-out;
+    will-change: width, left;
+}
+
+.radar-program-test-line {
+    height: 5px;
+    width: 100%;
+    top: 0px;
+    background-color: #007DB8;
+    border-radius: 2px;
+}
+
+.radar-program-test-arrow-top {
+    text-align: center;
+}
+
+.radar-program-test-arrow {
+    display: inline-block;
+    vertical-align: top;
+    width: 0px;
+    height: 0px;
+    border-top: 4px solid #007DB8;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.radar-program-test-cft-widget {
+    width: 100%;
+    height: 100%;
+}
+
+.appmode .radar-program-test-cft-widget {
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px solid #CCC;
+}
+
+.radar-program-test-cft-appmode {
+    display: none;
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    overflow: auto;
+    position: relative;
+}
+
+.appmode .radar-program-test-cft-appmode {
+    display: block;
+}
+
+.radar-program-test-cft-table-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.radar-program-test-cft-appmode th,
+.radar-program-test-cft-appmode td {
+    padding: 10px;
+}
+
+/* Reusable Table container */
+
+.radar-table {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.radar-table-header {
+    padding: 10px;
+    border-bottom: 1px solid #CCC;
+}
+
+.radar-table-content {
+    height: 100%;
+    flex: 1;
+    position: relative;
+}
+
+.radar-table-content-inner {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.radar-table-content-inner td,
+.radar-table-content-inner th {
+    padding: 10px;
+}
+
+.btn-radar {
+    background-color: #007DB8;
+    color: #FFF;
+    transition: background-color 150ms linear;
+}
+
+.radar-appmode-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

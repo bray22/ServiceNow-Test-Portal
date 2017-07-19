@@ -1,0 +1,733 @@
+<div id="CATeams-Templates">
+
+    <!--
+
+        All HTML templates for the CA Team widget found here
+        The first <div id="Example"></div> is not included in the template
+        Only used for ID selection by the View who calls for it
+
+    -->
+
+    <div id="CATeam-Config">
+        <div class="cateam-config">
+            <div class="cateam-config-inner">
+                <span class="cateam-select-team on-select-team">Select</span>
+                <div>a Midrange Team</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Config-Incomplete">
+        <div class="cateam-incomplete-config">
+            <span class="fa fa-exclamation-circle cateam-incomplete-icon"></span>
+            <div>
+                <p>You launched appmode from a CATeam widget which did not have an iteration selected, please <span class="cateam-incomplete-config-link on-select-iteration">Click Here</span> to select an iteration.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Error">
+        <div class="cateam-widget-error">
+            <div class="cateam-widget-error-icon">
+                <span class="fa fa-4x fa-exclamation-circle"></span>
+                <div class="cateam-widget-error-msg">{{ Message }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Loading">
+        <div class="cateam-loading">
+            <div class="cateam-loading-inner">
+                <div class="cateam-loading-icon"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Selector">
+        <div class="modal fade cateam-selector-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <h4 class="modal-title" style="opacity: 1;">Select a Midrange Team</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="cateam-modal-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Team-List">
+        <div class="cateam-team-list">
+            <div class="cateam-list-header">
+                <div class="cateam-list-header-inner">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <span>Team Name</span>
+                        </div>
+                        <div class="col-xs-2">
+                            <span>Team Type</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cateam-list-content">
+                <div class="cateam-list-content-inner">
+                    <div class="cateam-team-list-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Team-Item">
+        <div class="cateam-team-item row">
+            <div class="col-xs-10">
+                <span class="cateam-team-name on-select-team" data-level="{{ lvl }}">{{ Name }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-team-type">{{ TeamType }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Chart-Select">
+        <div class="cateam-chart-select">
+            <div class="cateam-chart-select-inner">
+                <div class="cateam-chart-select-item" data-module="widgets/cateams/charts/IterationBurndownView" data-nextstep="initIterationSelect">
+                    <div class="cateam-chart-select-icon on-select-chart">
+                        <img class="cateam-chart-select-img" src="./res/cateams/cateam-burndown.png" />
+                    </div>
+                    <div class="cateam-chart-select-name">Iteration Burndown</div>
+                </div>
+                <div class="cateam-chart-select-item" data-module="widgets/cateams/charts/CumulativeFlowView" data-nextstep="initIterationSelect">
+                    <div class="cateam-chart-select-icon on-select-chart">
+                        <img class="cateam-chart-select-img" src="./res/cateams/cateam-cumulative.png" />
+                    </div>
+                    <div class="cateam-chart-select-name">Iteration Cumulative Flow</div>
+                </div>
+                <div class="cateam-chart-select-item" data-module="widgets/cateams/charts/TopRankedFeatureBacklogView" data-nextstep="initIterationSelect">
+                    <div class="cateam-chart-select-icon on-select-chart">
+                        <img class="cateam-chart-select-img" src="./res/cateams/cateam-topranked.png" />
+                    </div>
+                    <div class="cateam-chart-select-name">Top Ranked Feature Backlog</div>
+                </div>
+                <div class="cateam-chart-select-item" data-module="widgets/cateams/charts/DefectSummaryView">
+                    <div class="cateam-chart-select-icon on-select-chart">
+                        <img class="cateam-chart-select-img" src="./res/cateams/cateam-defect-summary.png" />
+                    </div>
+                    <div class="cateam-chart-select-name">Defect Summary by Program</div>
+                </div>
+                <div class="cateam-chart-select-item" data-module="widgets/cateams/charts/OpenBacklogView" data-nextstep="initProgramSelect">
+                    <div class="cateam-chart-select-icon on-select-chart">
+                        <img class="cateam-chart-select-img" src="./res/cateams/cateam-obl.png" />
+                    </div>
+                    <div class="cateam-chart-select-name">Open Backlog Chart</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Iteration-Select">
+        <div class="cateam-iteration-select">
+            <div class="cateam-iteration-select-header">
+                <div class="cateam-iteration-select-header-inner">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <span class="cateam-iteration-header-txt">Name</span>
+                        </div>
+                        <div class="col-xs-4">
+                            <span class="cateam-iteration-header-txt">Start Date</span>
+                        </div>
+                        <div class="col-xs-4">
+                            <span class="cateam-iteration-header-txt">End Date</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cateam-iteration-select-body">
+                <div class="cateam-iteration-select-body-inner">
+                    <div class="cateam-iteration-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Iteration-Item">
+        <div class="cateam-iteration-item">
+            <div class="row">
+                <div class="col-xs-4">
+                    <span class="cateam-iteration-name on-select-iteration">{{ Name }}</span>
+                </div>
+                <div class="col-xs-4">
+                    <span>{{ StartDate }}</span>
+                </div>
+                <div class="col-xs-4">
+                    <span>{{ EndDate }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Program-Select">
+        <div class="cateam-program-select">
+            <div class="cateam-program-select-header">
+                <div class="cateam-program-select-header-inner">
+                    <div class="cateam-program-select-selectall">
+                        <div class="checkbox">
+                            <label>
+                                <input class="cateam-program-select-cb" type="checkbox" /> Select All
+                            </label>
+                        </div>
+                        <button class="btn btn-primary cateam-program-viewchart on-view-chart">View Chart</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <span class="cateam-program-header-txt">Program</span>
+                        </div>
+                        <div class="col-xs-3">
+                            <span class="cateam-program-header-txt">Archived</span>
+                        </div>
+                        <div class="col-xs-3">
+                            <span class="cateam-program-header-txt">Platform</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cateam-program-select-body">
+                <div class="cateam-program-select-body-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Program-Select-Item">
+        <div class="cateam-program-item">
+            <div class="row">
+                <div class="col-xs-1">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" />
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <span>{{ ProgramName }}</span>
+                </div>
+                <div class="col-xs-3">
+                    <span>{{ Archived }}</span>
+                </div>
+                <div class="col-xs-3">
+                    <span>{{ Platform }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart templates -->
+
+    <div id="CATeam-Defect-Summary-Widget">
+        <div class="cateam-defect-summary">
+            <div class="cateam-defect-summary-small">
+                <div class="cateam-defect-summary-small-inner">
+                    <div class="cateam-defect-small-header">
+                        <div class="cateam-defect-small-header-inner">
+                            <div class="cateam-defect-small-select">
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle cateam-defect-select" data-toggle="dropdown">
+                                        <span class="cateam-current-select">By Age Range</span>
+                                        <span>&nbsp;</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="cateam-defect-select-item on-select-tab" data-value="age">By Age Range</li>
+                                        <li class="cateam-defect-select-item on-select-tab" data-value="program">By Program</li>
+                                        <li class="cateam-defect-select-item on-select-tab" data-value="manager">By Direct Manager</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cateam-defect-small-body">
+                        <div class="cateam-defect-small-body-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cateam-defect-summary-large">
+                <div class="cateam-defect-summary-large-inner">
+                    <div class="cateam-large-header">
+                        <div class="cateam-large-header-inner">
+                            <div class="cateam-tab-row row">
+                                <div class="col-xs-4">
+                                    <div class="cateam-tab on-select-tab active" data-value="age">By Age Range</div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="cateam-tab on-select-tab" data-value="program">By Program</div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="cateam-tab on-select-tab" data-value="manager">By Direct Manager</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cateam-large-body">
+                        <div class="cateam-large-body-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-By-Age">
+        <div class="row">
+            <div class="col-xs-3">
+                <span class="cateam-large-header-txt">Period Ending</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-large-header-txt">Age</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-large-header-txt">% Total</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">Total</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P00</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P01</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P02</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P03</span>
+            </div>
+        </div>
+        <div class="cateam-large-body-list"></div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-Age-Line-Item">
+        <div class="cateam-defect-item cateam-defect-summary-line-item row">
+            <div class="col-xs-3">
+                <span>{{ PeriodEnding }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-tbl-age cateam-drilldown on-drilldown" data-drilldown="age">{{ Age }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-tbl-totalpct cateam-drilldown on-drilldown" data-drilldown="total">{{ TotalPct }}%</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-total cateam-drilldown on-drilldown" data-drilldown="total">{{ Total }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p00 cateam-drilldown on-drilldown" data-drilldown="P00">{{ P00 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p01 cateam-drilldown on-drilldown" data-drilldown="P01">{{ P01 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p02 cateam-drilldown on-drilldown" data-drilldown="P02">{{ P02 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p03 cateam-drilldown on-drilldown" data-drilldown="P03">{{ P03 }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-Age-Small-Line-Item">
+        <div class="cateam-defect-item cateam-defect-summary-small-line-item">
+            <div class="row">
+                <div class="col-xs-6">Period Ending</div>
+                <div class="col-xs-6 ">{{ PeriodEnding }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Age</div>
+                <div class="col-xs-6 cateam-tbl-age cateam-drilldown on-drilldown" data-drilldown="age">{{ Age }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Total Percent</div>
+                <div class="col-xs-6 cateam-tbl-totalpct cateam-drilldown on-drilldown">{{ TotalPct }}%</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Total</div>
+                <div class="col-xs-6 cateam-tbl-total cateam-drilldown on-drilldown">{{ Total }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P00</div>
+                <div class="col-xs-6 cateam-tbl-p00 cateam-drilldown on-drilldown">{{ P00 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P01</div>
+                <div class="col-xs-6 cateam-tbl-p01 cateam-drilldown on-drilldown">{{ P01 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P02</div>
+                <div class="col-xs-6 cateam-tbl-p02 cateam-drilldown on-drilldown">{{ P02 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P03</div>
+                <div class="col-xs-6 cateam-tbl-p03 cateam-drilldown on-drilldown">{{ P03 }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-By-Program">
+        <div class="row">
+            <div class="col-xs-3">
+                <span class="cateam-large-header-txt">Program</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-large-header-txt">Blockers</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-large-header-txt">% Total</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">Total</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P00</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P01</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P02</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P03</span>
+            </div>
+        </div>
+        <div class="cateam-large-body-list"></div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-Program-Line-Item">
+        <div class="cateam-defect-item cateam-defect-summary-line-item row">
+            <div class="col-xs-3">
+                <span>{{ Program }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-tbl-blockers cateam-drilldown on-drilldown">{{ Blockers }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-tbl-totalpct cateam-drilldown on-drilldown">{{ TotalPct }}%</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-total cateam-drilldown on-drilldown">{{ Total }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p00 cateam-drilldown on-drilldown">{{ P00 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p01 cateam-drilldown on-drilldown">{{ P01 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p02 cateam-drilldown on-drilldown">{{ P02 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p03 cateam-drilldown on-drilldown">{{ P03 }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-Small-Program-Line-Item">
+        <div class="cateam-defect-item cateam-defect-summary-small-line-item">
+            <div class="row">
+                <div class="col-xs-6">Program</div>
+                <div class="col-xs-6">{{ Program }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Blockers</div>
+                <div class="col-xs-6 cateam-tbl-blockers cateam-drilldown on-drilldown">{{ Blockers }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Total Percent</div>
+                <div class="col-xs-6 cateam-tbl-totalpct cateam-drilldown on-drilldown">{{ TotalPct }}%</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Total</div>
+                <div class="col-xs-6 cateam-tbl-total cateam-drilldown on-drilldown">{{ Total }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P00</div>
+                <div class="col-xs-6 cateam-tbl-p00 cateam-drilldown on-drilldown">{{ P00 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P01</div>
+                <div class="col-xs-6 cateam-tbl-p01 cateam-drilldown on-drilldown">{{ P01 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P02</div>
+                <div class="col-xs-6 cateam-tbl-p02 cateam-drilldown on-drilldown">{{ P02 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P03</div>
+                <div class="col-xs-6 cateam-tbl-p03 cateam-drilldown on-drilldown">{{ P03 }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-Program-NoData">
+        <div class="cateam-no-data">{{ Message }}</div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-By-Manager">
+        <div class="row">
+            <div class="col-xs-3">
+                <span class="cateam-large-header-txt">Manager</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-large-header-txt">Blockers</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-large-header-txt">% Total</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">Total</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P00</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P01</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P02</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-large-header-txt">P03</span>
+            </div>
+        </div>
+        <div class="cateam-large-body-list"></div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-Manager-Line-Item">
+        <div class="cateam-defect-item cateam-defect-summary-line-item row">
+            <div class="col-xs-3">
+                <span>{{ Manager }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-tbl-blockers cateam-drilldown on-drilldown">{{ Blockers }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span class="cateam-tbl-totalpct cateam-drilldown on-drilldown">{{ TotalPct }}%</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-total cateam-drilldown on-drilldown">{{ Total }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p00 cateam-drilldown on-drilldown">{{ P00 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p01 cateam-drilldown on-drilldown">{{ P01 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p02 cateam-drilldown on-drilldown">{{ P02 }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="cateam-tbl-p03 cateam-drilldown on-drilldown">{{ P03 }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="CATeam-Defect-Summary-Small-Manager-Line-Item">
+        <div class="cateam-defect-item cateam-defect-summary-small-line-item">
+            <div class="row">
+                <div class="col-xs-6">Manager</div>
+                <div class="col-xs-6">{{ Manager }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Blockers</div>
+                <div class="col-xs-6 cateam-tbl-blockers cateam-drilldown on-drilldown">{{ Blockers }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Total Percent</div>
+                <div class="col-xs-6 cateam-tbl-totalpct cateam-drilldown on-drilldown">{{ TotalPct }}%</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">Total</div>
+                <div class="col-xs-6 cateam-tbl-total cateam-drilldown on-drilldown">{{ Total }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P00</div>
+                <div class="col-xs-6 cateam-tbl-p00 cateam-drilldown on-drilldown">{{ P00 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P01</div>
+                <div class="col-xs-6 cateam-tbl-p01 cateam-drilldown on-drilldown">{{ P01 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P02</div>
+                <div class="col-xs-6 cateam-tbl-p02 cateam-drilldown on-drilldown">{{ P02 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">P03</div>
+                <div class="col-xs-6 cateam-tbl-p03 cateam-drilldown on-drilldown">{{ P03 }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="TopRanked-Top">
+        <div class="cateam-topranked">
+            <div class="cateam-topranked-small"></div>
+            <div class="cateam-topranked-large">
+                <div class="cateam-topranked-large-header">
+                    <div class="row cateam-topranked-table-header">
+                        <div class="col-xs-1">
+                            <span class="cateam-table-title">ID</span>
+                        </div>
+                        <div class="col-xs-3">
+                            <span class="cateam-table-title">Name</span>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="cateam-table-title">By Count</span>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="cateam-table-title">By Est Pts</span>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="cateam-table-title">PSI</span>
+                        </div>
+                        <div class="col-xs-2">
+                            <span class="cateam-table-title">Attempted %</span>
+                        </div>
+                        <div class="col-xs-2">
+                            <span class="cateam-table-title">Passed %</span>
+                        </div>
+                        <div class="col-xs-1">
+                            <span class="cateam-table-title">Rank</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cateam-topranked-large-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="TopRanked-VerticalLineItem">
+        <div class="cateam-vert-line-item">
+            <div class="row cateam-vtable-row">
+                <div class="col-xs-6">
+                    <span class="cateam-vtable-title">ID</span>
+                </div>
+                <div class="col-xs-6">
+                    <span>{{ ID }}</span>
+                </div>
+            </div>
+            <div class="row cateam-vtable-row">
+                <div class="col-xs-6">
+                    <span class="cateam-vtable-title">Name</span>
+                </div>
+                <div class="col-xs-6">
+                    <span>{{ Name }}</span>
+                </div>
+            </div>
+            <div class="row cateam-vtable-row">
+                <div class="col-xs-6">
+                    <span class="cateam-vtable-title">By Count</span>
+                </div>
+                <div class="col-xs-6">
+                    <span>{{ ByCount }}</span>
+                </div>
+            </div>
+            <div class="row cateam-vtable-row">
+                <div class="col-xs-6">
+                    <span class="cateam-vtable-title">By Est Pts</span>
+                </div>
+                <div class="col-xs-6">
+                    <span>{{ ByEstPts }}</span>
+                </div>
+            </div>
+            <div class="row cateam-vtable-row">
+                <div class="col-xs-6">
+                    <span class="cateam-vtable-title">PSI</span>
+                </div>
+                <div class="col-xs-6">
+                    <span>{{ PSI }}</span>
+                </div>
+            </div>
+            <div class="row cateam-vtable-row">
+                <div class="col-xs-6">
+                    <span class="cateam-vtable-title">Attempted %</span>
+                </div>
+                <div class="col-xs-6">
+                    <span>{{ Attempted }}</span>
+                </div>
+            </div>
+            <div class="row cateam-vtable-row">
+                <div class="col-xs-6">
+                    <span class="cateam-vtable-title">Passed %</span>
+                </div>
+                <div class="col-xs-6">
+                    <span>{{ Passed }}</span>
+                </div>
+            </div>
+            <div class="row cateam-vtable-row">
+                <div class="col-xs-6">
+                    <span class="cateam-vtable-title">Rank</span>
+                </div>
+                <div class="col-xs-6">
+                    <span>{{ Rank }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="TopRanked-TableLineItem">
+        <div class="cateam-table-line-item">
+            <div class="row">
+                <div class="col-xs-1">
+                    <span>{{ ID }}</span>
+                </div>
+                <div class="col-xs-3">
+                    <span>{{ Name }}</span>
+                </div>
+                <div class="col-xs-1">
+                    <span>{{ ByCount }}</span>
+                </div>
+                <div class="col-xs-1">
+                    <span>{{ ByEstPts }}</span>
+                </div>
+                <div class="col-xs-1">
+                    <span>{{ PSI }}</span>
+                </div>
+                <div class="col-xs-2">
+                    <span>{{ Attempted }}</span>
+                </div>
+                <div class="col-xs-2">
+                    <span>{{ Passed }}</span>
+                </div>
+                <div class="col-xs-1">
+                    <span>{{ Rank }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Dashboard-Layout">
+        <div class="cateams-dashboard">
+            <div class="cateams-dashboard-section">
+                <div class="cateams-dashboard-left">
+                    <div class="cateams-dashboard-area cateams-dashboard-1"></div>
+                </div>
+                <div class="cateams-dashboard-right">
+                    <div class="cateams-dashboard-area cateams-dashboard-2"></div>
+                </div>
+            </div>
+            <div class="cateams-dashboard-section">
+                <div class="cateams-dashboard-left">
+                    <div class="cateams-dashboard-area cateams-dashboard-3"></div>
+                </div>
+                <div class="cateams-dashboard-right">
+                    <div class="cateams-dashboard-area cateams-dashboard-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

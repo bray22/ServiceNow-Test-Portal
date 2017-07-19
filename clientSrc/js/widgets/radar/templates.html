@@ -1,0 +1,487 @@
+<div id="Radar-Templates">
+
+    <!-- 
+
+        All templates used in the RADAR widget family are located here. 
+        The first <div> is not part of the template, 
+        and only used for id selection by the view who calls for it
+
+    -->
+
+
+    <!-- Widget Templates -->
+
+    <div id="Radar-Appmode-Iframe">
+        <iframe class="radar-appmode-iframe" src="{{ Source }}"></iframe>
+    </div>
+
+    <div id="Radar-Loading">
+        <div class="radar-loading">
+            <div class="radar-loading-inner">
+                <div class="radar-loading-icon"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Config">
+        <div class="radar-program-config">
+            <div class="radar-program-config-inner">
+                <div class="radar-program-config-option">
+                    <a href="javascript:;" class="on-select-program">Select</a><span> a program</span>
+                </div>
+                <div class="radar-program-config-divider"></div>
+                <div class="radar-program-config-option">
+                    <a href="javascript:;" class="on-compare-programs">Compare</a><span> programs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Widget-With-Polltime">
+        <div class="radar-program-widget">
+            <div class="radar-program-widget-inner">
+                <div class="radar-program-widget-content">
+                    <div class="radar-program-widget-content-inner">
+                        <div class="radar-program-widget-chart-content">
+                            <div class="radar-program-widget-chart-content-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="radar-program-widget-polltime">
+                    <div class="radar-program-widget-polltime-inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Appmode-No-Config">
+        <div class="radar-no-appmode-config">
+            <div class="radar-no-appmode-config-text">Please configure your Radar widget first before launching appmode</div>
+        </div>
+    </div>
+
+    <div id="Polltime">
+        <div class="radar-polltime">
+            <div class="radar-polltime-inner">
+                <span class="fa fa-clock-o"></span>
+                <span class="radar-polltime-text">{{ Timestamp }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="Radar-Widget-Error">
+        <div class="radar-widget-error">
+            <div class="radar-widget-error-icon">
+                <span class="fa fa-4x fa-exclamation-circle"></span>
+                <div class="radar-widget-error-msg">{{ Message }}</div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Program Chart-Selector Templates -->
+
+
+    <div id="Program-Chart-Selector">
+        <div class="modal fade radar-chart-selector-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            <span class="fa fa-times"></span>
+                        </button>
+                        <h4 class="modal-title">
+                            <span class="radar-wizard-step on-wizard-step" data-step="program">Select a Program</span>
+                        </h4>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Chart-Program-Selector">
+        <div class="row radar-program-selector-lineitem">
+            <div class="col-xs-6">
+                <p class="radar-chart-selector-column-header">Program</p>
+            </div>
+            <div class="col-xs-3">
+                <p class="radar-chart-selector-column-header">Archived</p>
+            </div>
+            <div class="col-xs-3">
+                <p class="radar-chart-selector-column-header">Platform</p>
+            </div>
+        </div>
+        <div class="radar-chart-selector-active-programs"></div>
+        <div class="radar-chart-selector-archived">
+            <span class="radar-chart-selector-archived-inner on-archived">
+                <div class="radar-chart-selector-archive-txt">Archived</div>
+                <span class="fa fa-angle-down"></span>
+            </span>
+        </div>
+        <div class="radar-chart-selector-archived-programs" style="display: none;"></div>
+    </div>
+
+    <div id="Program-Selector-LineItem">
+        <div class="row radar-program-selector-lineitem">
+            <div class="col-xs-6">
+                <p>
+                    <a href="javascript:;" class="on-select-program" data-program="{{ Program }}">{{ Program }}</a>
+                </p>
+            </div>
+            <div class="col-xs-3">
+                <p>{{ Archived }}</p>
+            </div>
+            <div class="col-xs-3">
+                <p>{{ Platform }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Chart-Chart-Selector">
+        <div>
+            <div class="radar-chart-family-title">{{ Program }} Defect Charts</div>
+            <div class="radar-chart-container" data-chartfamily="defects"></div>
+            <div class="radar-chart-family-title">{{ Program }} Test Charts</div>
+            <div class="radar-chart-container" data-chartfamily="test"></div>
+            <div class="radar-chart-family-title">{{ Program }} Feature Charts</div>
+            <div class="radar-chart-container" data-chartfamily="feature"></div>
+            <div class="radar-chart-family-title">{{ Program }} Build Charts</div>
+            <div class="radar-chart-container" data-chartfamily="build"></div>
+        </div>
+    </div>
+
+    <div id="Program-Chart-Chart-Item">
+        <div class="radar-chart-item" data-family="{{ Family }}">
+            <div class="radar-chart-item-title">{{ ChartTitle }}</div>
+            <div class="radar-chart-item-content" data-toggle="tooltip" data-placement="bottom" title="{{ Description }}">
+                <img class="radar-chart-item-img" />
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Chart-Feature-Select">
+        <div class="radar-feature-select">
+            <div class="radar-feature-select-inner">
+                <div class="radar-feature-select-header">
+                    <div class="radar-feature-select-header-inner">
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <span class="radar-feature-select-header-txt">ID</span>
+                            </div>
+                            <div class="col-xs-8">
+                                <span class="radar-feature-select-header-txt">Name</span>
+                            </div>
+                            <div class="col-xs-2">
+                                <span class="radar-feature-select-header-txt">Status</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="radar-feature-select-body">
+                    <div class="radar-feature-select-body-inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Feature-Select-Item">
+        <div class="row radar-program-feature-select-item">
+            <div class="col-xs-2">
+                <span class="radar-program-feature-id on-select-feature">{{ FeatureId }}</span>
+            </div>
+            <div class="col-xs-8">
+                <span>{{ FeatureName }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span>{{ FeatureStatus }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Feature-Cycle-Select">
+        <div class="radar-cycle-select">
+            <div class="radar-cycle-list">
+                <div class="radar-cycle-list-inner">
+                    <div class="radar-cycle-list-header">
+                        <div class="radar-cycle-list-header-inner">
+                            <p>All test charts based on Phase &amp; Cycle. Please select a cycle or click on the current cycle to display the chart</p>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <span class="radar-feature-select-header-txt">Phase/Cycle</span>
+                                </div>
+                                <div class="col-xs-4">
+                                    <span class="radar-feature-select-header-txt">Start Date</span>
+                                </div>
+                                <div class="col-xs-4">
+                                    <span class="radar-feature-select-header-txt">End Date</span>
+                                </div>
+                            </div>
+                            <div class="radar-cycle-select-current-cycle radar-data-select">
+                                <span class="radar-cycle-select-current-cycle-txt on-select-cycle">{{ CurrentCycle }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="radar-cycle-list-body">
+                        <div class="radar-cycle-list-body-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Feature-Cycle-Section">
+        <div class="radar-cycle-section">
+            <div class="radar-cycle-section-title">
+                <span>{{ SectionTitle }}</span>
+            </div>
+            <div class="radar-cycle-section-list"></div>
+        </div>
+    </div>
+
+    <div id="Program-Feature-Cycle-List-Item">
+        <div class="row radar-cycle-list-item radar-data-select">
+            <div class="col-xs-4">
+                <span class="radar-cycle-name-txt on-select-cycle">{{ CycleName }}</span>
+            </div>
+            <div class="col-xs-4">
+                <span>{{ CycleStartDate }}</span>
+            </div>
+            <div class="col-xs-4">
+                <span>{{ CycleEndDate }}</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Promoted Builds Templates -->
+
+
+    <div id="Program-Promoted-Builds">
+        <div class="radar-build-promoted-1x1">
+            <div>
+                <div class="radar-last-promoted-title">Last Promoted Build</div>
+                <div class="radar-last-promoted-value">{{ LastPromoted }}</div>
+            </div>
+        </div>
+        <div class="radar-build-promoted-large">
+            <div class="radar-build-promoted-list-header">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div>Day</div>
+                    </div>
+                    <div class="col-xs-5">
+                        <div>Version</div>
+                    </div>
+                    <div class="col-xs-1">
+                        <div data-toggle="tooltip" data-placement="top" title="All ARs (regardless of status, priority, etc.) with a Releases Built-In value equal to the BuildForge Build version">Total</div>
+                    </div>
+                    <div class="col-xs-2">
+                        <div>Test Ready</div>
+                    </div>
+                    <div class="col-xs-1">
+                        <div>Verified</div>
+                    </div>
+                    <div class="col-xs-1">
+                        <div>Other</div>
+                    </div>
+                </div>
+            </div>
+            <div class="radar-build-promoted-list"></div>
+            <div class="radar-build-promoted-arsearch">
+                <label>AR Search:</label>
+                <input class="form-control radar-build-promoted-ar-search-input" type="text" />
+                <button class="btn btn-default radar-build-promoted-search-ar">Search</button>
+            </div>
+            <div class="radar-build-promoted-ar-results"></div>
+        </div>
+    </div>
+
+    <div id="Program-Promoted-Builds-Line-Item">
+        <div class="row radar-promoted-builds-line-item" data-dt="{{ DT }}" data-version="{{ Version }}">
+            <div class="col-xs-2">
+                <div>{{ Day }}</div>
+            </div>
+            <div class="col-xs-5">
+                <div>{{ Version }}</div>
+            </div>
+            <div class="col-xs-1">
+                <a href="javascript:;" class="on-drilldown-total">{{ Total }}</a>
+            </div>
+            <div class="col-xs-2">
+                <a href="javascript:;" class="on-drilldown-testready">{{ TestReady }}</a>
+            </div>
+            <div class="col-xs-1">
+                <a href="javascript:;" class="on-drilldown-verified">{{ Verified }}</a>
+            </div>
+            <div class="col-xs-1">
+                <a href="javascript:;" class="on-drilldown-other">{{ Other }}</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Feature Charts -->
+
+
+    <div id="Program-Feature-Summary">
+        <div class="radar-program-feature-summary">
+            <div class="radar-program-feature-summary-small">
+                <div class="radar-fsummary-small-title">{{ Cycle }}</div>
+                <div class="radar-fsummary-small-bkg">
+                    <div class="radar-fsummary-small-tracked-val">{{ TrackedFeatureCount }}</div>
+                    <div class="radar-fsummary-small-tracked-txt">Tracked Features</div>
+                </div>
+            </div>
+            <div class="radar-program-feature-summary-large">
+                <div class="radar-fsummary-table">
+                    <div class="radar-fsummary-cycle">
+                        <div class="radar-fsummary-cycle-inner">
+                            <span class="radar-fummary-selected-cycle">{{ Cycle }}</span>
+                        </div>
+                    </div>
+                    <div class="radar-fsummary-table-header">
+                        <div class="radar-fsummary-table-header-inner">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <span class="radar-fsummary-header-txt">Feature</span>
+                                </div>
+                                <div class="col-xs-1">
+                                    <span class="radar-fsummary-header-txt">OBL</span>
+                                </div>
+                                <div class="col-xs-1">
+                                    <span class="radar-fsummary-header-txt">TBL</span>
+                                </div>
+                                <div class="col-xs-2">
+                                    <span class="radar-fsummary-header-txt">Att %</span>
+                                </div>
+                                <div class="col-xs-2">
+                                    <span class="radar-fsummary-header-txt">First Passed %</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="radar-fsummary-table-list">
+                        <div class="radar-fsummary-table-list-inner">
+                            <div class="radar-fusmmary-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Feature-Summary-Table-Item">
+        <div class="radar-fsummary-table-item row">
+            <div class="col-xs-6">
+                <span class="radar-fsummary-feature-name" data-drilldown="name">{{ FeatureName }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="radar-fsummary-feature-obl radar-drilldown on-drilldown" data-drilldown="OBLT">{{ OBL }}</span>
+            </div>
+            <div class="col-xs-1">
+                <span class="radar-fsummary-feature-tbl radar-drilldown on-drilldown" data-drilldown="TBV">{{ TBL }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span>{{ Att }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span>{{ FirstPassed }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="Program-Feature-ToBeVerified">
+        <div class="radar-program-feature-tobeverified"></div>
+    </div>
+
+    <div id="Program-Feature-TestProgress">
+        <div class="radar-program-feature-testprogress"></div>
+    </div>
+
+    <div id="Program-Feature-TestStatus">
+        <div class="radar-program-feature-teststatus"></div>
+    </div>
+
+    <!-- Test EST -->
+
+    <div id="Program-TestEST">
+        <div class="radar-program-test-est-small">
+            <div>Most Recent EST Result</div>
+            <div class="radar-program-test-est-mostrecent">{{ SmallEstResult }}</div>
+            <div class="radar-program-test-est-mostrecentval" style="background-color: {{ Color }};">
+                <span>{{ SmallEstResultValue }}</span>
+            </div>
+        </div>
+        <div class="radar-program-test-est-large">
+            <table class="radar-program-test-est-table">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Test Progress -->
+
+    <div id="Program-Test-Progress-No-Data">
+        <div class="radar-program-test-progress-no-data">
+            <div class="radar-program-test-progress-no-data-title">No tests have been run for</div>
+            <div class="radar-program-test-progress-no-data-cycle">{{ Cycle }}</div>
+        </div>
+    </div>
+
+    <div id="Program-Backlog-No-Data">
+        <div class="radar-program-test-progress-no-data">
+            <div class="radar-program-test-progress-no-data-title">No data found.</div>
+        </div>
+    </div>
+
+    <!-- Test CFT -->
+
+    <div id="Test-CFT">
+        <div class="radar-program-test-cft">
+            <div class="radar-program-test-cft-header">
+                <div class="radar-program-test-header-container">
+                    <span class="radar-program-test-header-option" data-target="All">All</span>
+                    <span class="radar-program-test-header-option" data-target="OB">Oberons (OB)</span>
+                    <span class="radar-program-test-header-option" data-target="VP">vVNX (VP)</span>
+                </div>
+                <div class="radar-program-test-header-underline-container">
+                    <div class="radar-program-test-header-underline">
+                        <div class="radar-program-test-line"></div>
+                        <div class="radar-program-test-arrow-top">
+                            <div class="radar-program-test-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="radar-program-test-cft-body">
+                <div class="radar-program-test-cft-body-inner">
+                    <div class="radar-program-test-cft-widget"></div>
+                    <div class="radar-program-test-cft-appmode">
+                        <div>
+                            <span class="radar-program-test-cft-table-title">Total Open Product Defects (No Dupes)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- re-usable table container -->
+
+    <div id="Radar-Table">
+        <div class="radar-table">
+            <div class="radar-table-header">
+                <button class="btn btn-radar radar-table-btn on-excel">
+                    <span class="fa fa-file-excel-o"></span>
+                    <span>Download as spreadsheet</span>
+                </button>
+            </div>
+            <div class="radar-table-content">
+                <div class="radar-table-content-inner">{{ Table }}</div>
+            </div>
+        </div>
+    </div>
+
+</div>

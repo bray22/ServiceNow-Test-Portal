@@ -1,0 +1,79 @@
+
+
+Integrated Widgets
+
+    - Code reviews for integrated widgets with TheHub dev team are mandatory.
+
+    - Your widget will not release until all rules are satisfied.
+
+
+    // ==================================================================================================================
+
+
+    Rules
+
+    - "this.$el" gives you the element which you are allowed to render into.
+
+    - You are not allowed to go outside of the scope of the supplied element, no exceptions.
+
+    - There is no JS global-scope usage allowed, no exceptions.
+
+    - Changes to WidgetModel.attributes must be through 'this.model.set("AttributeName", value);'
+        - Please glance through backbonejs.org for more information.
+
+    - All css classes must have a unique prefix to avoid conflicting class names
+
+
+    // ==================================================================================================================
+
+
+    Tips
+
+    - initialize: function(params) {}
+        -params.appmode (Boolean) - determines if your widget was called for appmode
+        -params.config (Boolean) - determines if your widget was called for config
+
+
+    - The View you define for your widget has all information needed about a widget.
+
+
+    - this.model is the WidgetModel, and contains all attributes you need describing your Hub's widget
+
+
+    - WidgetModel also contains helper methods for you to save/load various configurations
+        -this.model.getInstanceConfig(function (configuration) {})      // get widget instance's configuration
+        -this.model.setInstanceConfig(config, function (success) {})    // set widget instance's configuration
+        -this.model.getGlobalConfig(function (configuration) {})        // get shared configuration based on widget
+        -this.model.setGlobalConfig(config, function (success) {})      // set shared configuration based on widget
+
+
+    - Extend your View from TheHub's common 'View' parent:
+
+        require(["view/View"], function (View) {
+            
+            return View.extend({
+                // widget code
+            });
+
+        });
+
+
+    - The View parent you extended from has helper functions for common functionality,
+      see the documentation for more information of their arguments
+            - this.addStylesheet("./path/to/css/file", callback, context);
+            - this.template("template-id", templateParameters, localizationStrings, templatesSource);
+
+
+    - To interact with your widget's footer panel, trigger events on 'this.model'    
+        -this.model.trigger("configure")                // open/close the configuration panel
+        -this.model.trigger("appmode")                  // launch appmode
+        -this.model.trigger("resize", width, height)    // resize the widget
+        -this.model.trigger("delete")                   // remove the widget
+        -this.model.trigger("help")                     // launch the help-page
+
+
+    - To get a .html template file:
+
+        require(["text!path/to/templates.html"], function (templateFileText) {
+            // ...
+        })
