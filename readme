@@ -1,0 +1,364 @@
+
+
+
+============================================================================
+General Notes
+============================================================================
+
+    - You must host this client on a localhost in order for the templating text plugin to work.
+
+    - When running on a localhost, you should argue which environment to connect to
+        eg: localhost:3000?env=dev|qa|uat|preprod|prod
+        - if you don't, client will look for 'localhost' hostname and default to dev
+        - else the client will go to the fatal error screen
+
+
+
+============================================================================
+Client Arguments
+============================================================================
+
+    - env               {dev|qa|uat|preprod|prod}       What backend environment to connect to
+
+    - newuser           {true|false}                    simulate the new user walkthrough
+
+    - newuserstep       {Number}                        what step the walkthrough should immediately jump to (for development)
+
+    - debug             {true|false}                    toggle console logs and the dev menu
+
+    - dlh               {String}                        deep link hash identifier
+
+    - dlrd              {String}                        extra deep link data to be passed along with 'dlh'
+
+    - SwarmArray        {String}                        extra deep link data to be passed along with a swarm deep link
+
+    - SwarmHost         {Number}                        extra deep link data to be passed along with a swarm deep link
+
+    - SwarmTestbed      {String}                        extra deep link data to be passed along with swarm deep link
+
+    - lang              {String}                        override language to the specified 2-character language code
+
+
+
+
+============================================================================
+Running with node localhost server
+============================================================================
+
+    1 install node
+
+    2 install node 'serve' package ("npm install -g serve@2.1.2")
+        - you must specify the version "2.1.2", latest version will not work
+
+    3 navigate your terminal to the client's directory and execute "serve"
+
+        eg: cd c:/git/hub-core/src/corehubserver/clientsrc
+            serve
+
+        (Node will start serving the directory on the listed port)
+
+    4 on your browser: "localhost:{PORT}"
+
+
+
+
+
+============================================================================
+Build, Deploy, Generate Documentation, and updating CSS from SASS/SCSS files
+============================================================================
+
+	1 install node
+
+    2 navigate your terminal to the main src directory (.../hub-core/src/CoreHubServer)
+	
+	3 install npm packages: "npm install" (this will install all other required packages from package.json)
+
+    4 install npm gulp globally: "npm install gulp -g" (this will install gulp command processor, and be globally accessible)
+	
+	5 all other tasks/processes can be accomplished via tasks in gulpfile by running gulp - here's common commands:
+		- "gulp"              (runs default build process - including sass task - and outputs everything to wwwroot folder)
+		- "gulp yuidoc"       (generates updated client documentation based on output path in yuidoc.json file)
+		- "gulp sass:main"    (runs sass preprocessor to generate updated css - this is not need if running sass:watch)
+		- "gulp sass:watch"   (runs a watcher that performs above sass task automatically whenever a scss file changes)
+		- "gulp deploy:dev"   (deploys build output and source to server "USD-QMR-PRD" - build should be run prior)
+
+
+
+
+
+============================================================================
+Coding Convention Guidelines
+============================================================================
+
+    - These conventions are pretty common/basic, but are defined here for a clean and uniform code base.
+
+    - All indentations must be using 4 spaces, not tabs, no exceptions.
+
+    - You MUST conform to the syntax style of the file you are working in.
+        - 'single-quotes' vs. "double quotes"
+        - space convention
+        - jquery usage
+        - etc...
+        - When working inside of a file, you MUST adopt the look and feel of that file.
+        - All coding conventions within a file must be consistent.
+
+    - NEVER CHECK IN TEMPORARY DEVELOPMENT CODE
+        - no temporary console logs
+        - no massive blocks of commented out code
+
+    - Do not write inline element events
+        - Exceptions allowed for certain screens which are too small/simple for the need of a View behind it
+
+    - All User-Facing strings within the core Hub application must be defined inside of nls/Hub.js
+        - View.template() will replace tokens with this syntax "||str:TokenID||" with the actual string.
+
+
+
+
+
+============================================================================
+Javascript Guidelines
+============================================================================
+
+    - THERE IS NO USAGE OF JAVASCRIPT GLOBAL-SCOPE ALLOWED, NO EXCEPTIONS.
+
+    - All module definitions MUST have "strict mode" enabled (unless plugins require sloppy mode).
+
+    - When leaving behind unfinished work, leave a comment starting with "// TODO".
+
+    - All Hub ajax requests MUST live inside of the util/Ajax module, no exceptions.
+
+    - All HTML must come from a templates file, no JS-made elements.
+        - logical exceptions allowed
+
+    - Do not mix template logic with JS logic, templates are for html, javascript is for logic.
+
+    - Every function must have a comment, following yuidoc syntax.
+
+    - DO NOT comment inside of a function, this degrades readability
+        - exceptions allowed for "funky" logic which may be difficult to understand at a glance
+
+    - Condition brackets are mandatory.
+
+
+
+
+
+============================================================================
+CSS Guidelines
+============================================================================
+
+    - Integrated widgets are NOT ALLOWED to re-use style classes coming from the hub core-application, no exceptions.
+        
+    - All integrated widgets should be completely stand-alone modules, and have their own css file.
+
+    - Element ID styling/usage is allowed and encouraged for all page layout (critical-render) elements.
+
+    - Do not style event-selection classes and do not add events to a class which is used for styling
+    
+    - all event classes should be prefixed with "on-"
+        - eg:
+            <span class='hub-select-program on-select-program'>Click me</span>
+                - "on-select-program" // no styling on this class, its used to event selection
+                - "hub-select-program" // no event-tying on this class, its used for styling
+
+    - All font-sizing must be using 'em' not pixels.
+        - font pixel sizes are to be defined as high in the css-object-model as possible. (currently bootstrap defines these)
+        - only font size relative adjustments should be made where needed.
+
+    - All colors should come from variables.scss
+        - certain one-off colors are allowed.
+
+    - Styles are conditioned right to left, do not write selectors than end with a tag 
+        (this forces the browser to apply the condition to every element of that tag)
+            eg: BAD: .my-class span         (Every span will now run this condition)
+            eg: BAD: .my-class.selected a   (Every anchor will now run this condition)
+
+    - Keep style logic as simple as possible! 
+        - Rendering performance is just as important as JS performance or Server performance.
+
+
+
+
+
+
+============================================================================
+Code Comments
+============================================================================
+
+    Important Notes: 
+        - For a comment to be parsed into code documentation, it must start with " /** "
+        - For a comment that should NOT be parsed into documentation, it should either start with " // " or " /* "
+
+
+    /**
+    * This is how comments are formatted, for more information on this style, visit http://yui.github.io/yuidoc/syntax/
+    *
+    * @param {String} name - this is a simple description of this argument
+    * @param {Number} age - this is another simple description
+    * @return {String} this describes what is being returned
+    *
+    * @method GetHalfAge
+    * @public
+    */
+    function GetHalfAge (name, age) {
+        return name + "'s half age is " + (age * 0.5);
+    }
+
+    Notes:
+        - DO NOT COMMENT INSIDE OF A FUNCTION!
+            - exceptions made for 'funky' logic, which may be difficult to understand at a glance
+        - every function MUST be commented
+        - every file MUST have a file comment header (starting with '/*' - not to be parsed)
+        - when tagging public/private/protected use your intended access control
+            - private can be non-intuitive and at times memory-intensive to achieve
+
+
+
+
+
+============================================================================
+Variables
+============================================================================
+
+    var someValue = 2;
+
+    var $mySelection = $("#selector");
+
+    var person = getSomething(),
+        personName = person.getName(),
+        something = null;
+
+
+    Notes:
+        - cammelCase variables
+        - Variable names should be meaningful
+            - minification will take care of those extra-long variable names, be descriptive.
+        - PascalCase classes and globally public functions (such as Ajax methods)
+        - Only use '$' prefix for jquery selection variables
+        - Always declare with 'var' - there are NO GLOBALS ALLOWED!
+            - "strict mode" will catch this error
+        - When declaring multiple variables, use comma-delimited method, placing each variable on a new line like above
+    
+
+
+
+
+============================================================================
+Functions
+============================================================================
+
+    function correct (arg1, arg2, ...) {
+        return arg1 + arg2;
+    }
+
+    function wrong(arg1,arg2,...) 
+    {
+        return 
+            arg1 + arg2;
+    }
+
+    function GTFO_WRONG(arg1,
+        arg2) 
+    {
+                return arg1+
+                    arg2;
+                } 
+
+    function wrong(arg1,arg2,...) { return arg1+arg2; }
+
+    function wrong (arg1, arg2) {
+        // a comment in the wrong place - we should only see code inside of a function
+        return arg1 +/* arg2/2*/ arg2;  // isn't this function code tough to read now?
+        // all notes must be above in the function comment
+    }
+
+    Notes:
+        - Same line opening bracket
+        - Space between function name and argument list
+        - Space between argument list and opening bracket
+        - Space between each argument
+        - brackets are mandatory, even if a condition has a single-line of executing code
+        - No comments inside of function code!
+
+
+
+
+
+============================================================================
+AMD Environment
+============================================================================
+
+    http://requirejs.org/
+
+
+    // module defining...
+    define([dependency1, dependency2], function (Dep1, Dep2) {
+
+        var MyModule = {
+            method1: function () { 
+                Dep1.doSomething();
+            },
+
+            value1: Dep2.value
+        };
+        
+        return MyModule;
+    });
+
+
+    // singleton defining...
+    define([dependency1, dependency2], function (Dep1, Dep2) {
+
+        var MyModule = function () {
+            this.method1 = function () { };
+            this.value1 = "xyz";
+        };
+        
+        // key difference: the "new" return object
+
+        return new MyModule(); 
+    });
+
+
+    // getting a js module, do not include ".js"
+    require("path/to/module", function (Module) {
+        Module.DoSomething();
+    });
+
+
+
+    Notes:
+        - dependencies are used for modules that cannot operate without the module
+            - eg: Desktop owns a collection of Widgets, so the desktop cannot operate without the Widget module
+            - eg: A modal is not a dependency for anything, require() the modal only when its needed
+
+
+        - do not use require from global-scope, require "require" as a dependency, eg:
+
+
+    define(["require"], function (require) {
+        
+        var MyModule = function () {
+            this.doSomething = function () {
+                require(["modal"], function (Modal) {
+                    new Model();
+                });
+            };
+        };
+
+        return MyModule;
+    });
+
+
+        - do not use jquery or underscore out of global-scope, require them as dependencies, eg:
+
+
+    define(["jquery", "underscore"], function ($, _) {
+       
+        $("body").html("Look ma, no global-scope used here!");
+
+        _.each(["We", "Dont", "need", "global", "scope"], function (item) {
+            console.log(item);
+        });
+    });
