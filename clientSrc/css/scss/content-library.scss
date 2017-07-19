@@ -1,0 +1,301 @@
+/*
+* content-library.scss
+*
+* mandatory prefix: "clib-"
+*/
+
+
+#clib {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    right: 100px;
+    bottom: 100px;
+    z-index: $z-index-content-library;
+}
+
+#clib-content {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+#clib-header {
+    text-align: center;
+    background-color: $color-dark-blue;
+    padding: 15px 0px 15px 0px;
+    position: relative;
+    color: $color-white;
+}
+
+#clib-header-title {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#clib-close-btn {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+#clib-body {
+    height: 100%;
+    flex: 1;
+    background-color: $color-white;
+    position: relative;
+    overflow: hidden;
+}
+
+#clib-body-inner {
+    height: 100%;
+    flex: 1;
+    padding: 0px 15px 15px 15px;
+}
+
+#clib-body-widget-list {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    overflow-y: auto;
+    padding-top: 7px;
+}
+
+#clib-filters-inner-top {
+    background-color: $color-light-grey;
+    border-bottom: 1px solid $color-grey;
+}
+
+#clib-filters-inner-top-row {
+    padding: 15px;
+}
+
+#clib-filters-inner-bottom {
+    padding: 10px;
+    background-color: $color-white;
+}
+
+#clib-sortby {
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+#clib-alpha-lbl {
+    margin-right: 10px;
+}
+
+#clib-pop-lbl {
+    padding-left: 10px;
+    border-left: 1px solid black;
+}
+
+#clib-sort-selector {
+    padding-top: 6px;
+}
+
+#clib-sort-selector-top {
+    position: relative;
+}
+
+#clib-sort-selector-line {
+    height: 3px;
+    top: 0px;
+    width: 100%;
+    background-color: $color-blue;
+}
+
+#clib-sort-selector-arrow-top {
+    text-align: center;
+}
+
+#clib-sort-selector-arrow {
+    width: 0px;
+    height: 0px;
+    border-top: 5px solid $color-blue;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin: 0 auto;
+}
+
+#clib-search {
+    border-right: none;
+    height: 29px;
+}
+
+#clib-alpha-lbl-txt,
+#clib-pop-lbl-txt {
+    color: $color-grey;
+    cursor: pointer;
+}
+
+#clib-alpha-lbl-txt.selected,
+#clib-pop-lbl-txt.selected {
+    color: $color-black;
+    font-weight: bold;
+}
+
+.clib-search-inputgroup .input-group-addon:last-child {
+    background-color: $color-blue;
+    color: $color-white;
+}
+
+.clib-search-inputgroup .input-group-addon,
+.clib-search-inputgroup .form-control {
+    border-color: $color-grey;
+}
+
+.clib-filter-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+.clib-filter-item:first-child {
+    width: 240px;
+    margin-left: 0px;
+}
+
+.clib-filter-btn {
+    min-width: 175px;
+    border: 1px solid $color-grey;
+}
+
+#clib-bu-list {
+    max-height: 500px;
+    overflow-y: auto;
+    width: 300px;
+}
+
+.clib-filter-caret {
+    position: absolute;
+    right: 7px;
+    top: 13px;
+}
+
+.clib-dd-item {
+    padding: 2px 10px 2px 10px;
+    cursor: pointer;
+}
+
+.clib-dd-item:hover {
+    background-color: $color-blue;
+    color: $color-white;
+}
+
+.clib-item-inner {
+    text-align: center;
+    position: relative;
+    padding: 5px 5px 0px 5px;
+}
+
+.clib-options {
+    position: absolute;
+    left: 1px;
+    top: -6px;
+    z-index: 1;
+    -webkit-transform-origin: 15% 0%;
+    -ms-transform-origin: 15% 0%;
+    transform-origin: 15% 0%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    transition: -webkit-transform 250ms ease-in-out,
+                -ms-transform 250ms ease-in-out,
+                transform 250ms ease-in-out;
+}
+
+.clib-item-inner:hover .clib-options {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.clib-option-icon {
+    text-shadow: 1px 1px 2px rgba(150,150,150, 0.4);
+}
+
+.clib-item-title-txt {
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+.clib-option {
+    @extend .material-dropshadow;
+    float: left;
+    width: 23px;
+    height: 23px;
+    margin-right: 5px;
+    padding-top: 1px;
+    text-align: center;
+    color: $color-white;
+    cursor: pointer;
+    border: 1px solid $color-dark-blue;
+    border-radius: 50%;
+    background-color: $color-blue;
+}
+
+#clib-bufilter-lbl,
+#clib-rolefilter-lbl {
+    margin-left: 12px;
+}
+
+.clib-item {
+    width: 115px;
+}
+
+.clib-item-image {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto;
+    cursor: pointer;
+    background-origin: content-box;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    border-radius: 8px;
+    border: 1px solid #EEE;
+}
+
+.clib-item-title {
+    margin: 5px 0px 20px 0px;
+}
+
+.clib-owned {
+    display: none;
+    position: absolute;
+    right: 2px;
+    top: -7px;
+    width: 25px;
+    height: 25px;
+    padding-top: 3px;
+    background-color: $color-green;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.clib-owned-icon {
+    color: $color-white;
+}
+
+.clib-item.owned {
+    .clib-item-image {
+        border: 2px solid $color-blue;
+        border-radius: 8px;
+    }
+
+    .clib-owned {
+        display: block;
+    }
+}

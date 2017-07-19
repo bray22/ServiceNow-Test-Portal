@@ -1,0 +1,123 @@
+/*
+* appmode styling
+*/
+
+
+.widget-appmode,
+.iframe-appmode {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: $color-white;
+    z-index: $z-index-appmode;
+    overflow: hidden;
+}
+
+.widget-appmode-body,
+.iframe-appmode-body {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.widget-appmode-header,
+.iframe-appmode-header {
+    background-color: $color-off-white;
+}
+
+.widget-appmode-divider,
+.iframe-appmode-divider {
+    background-color: $color-light-grey;
+    height: 3px;
+}
+
+.widget-appmode-divider-inner,
+.iframe-appmode-divider-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.appmode-icons {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.appmode-close,
+.appmode-deeplink,
+.appmode-help {
+    @extend .link;
+}
+
+.appmode-close:hover,
+.appmode-deeplink:hover,
+.appmode-help:hover {
+    @extend .link-hover;
+}
+
+.appmode-header-title {
+    padding-left: 25px;
+}
+
+.appmode-title,
+.iframe-appmode-title {
+    color: $color-black;
+}
+
+.appmode-title-initial {
+    margin-left: 5px;
+    color: $color-grey;
+}
+
+.appmode-title,
+.iframe-appmode-title {
+    display: inline-block;
+}
+
+.appmode-close,
+.appmode-deeplink {
+    margin-top: 17px;
+}
+
+.appmode-deeplink,
+.appmode-help {
+    margin-right: 15px;
+}
+
+.widget-appmode-content,
+.iframe-appmode-content {
+    background-color: $color-white;
+    height: 100%;
+    position: relative;
+}
+
+.widget-appmode-content-inner,
+.iframe-appmode-content-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.widget-appmode-height-set,
+.iframe-appmode-height-set {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.widget-appmode-iframe,
+.iframe-appmode-iframe {
+	width: 100%;
+    height: 100%;
+    border: none;
+    overflow: hidden;
+    background-color: $color-white;
+}

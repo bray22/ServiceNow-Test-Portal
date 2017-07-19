@@ -1,0 +1,43 @@
+/*
+* toast-messages
+*/
+
+#toast-container {
+    position: absolute;
+    z-index: $z-index-toast-container;
+    width: 512px;
+    top: 140px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.hb-toast-msg {
+    @extend .material-dropshadow;
+    background-color: $color-white;
+    border-radius: 4px;
+    border: 1px solid $color-dark-grey;
+    margin-bottom: 10px;
+}
+
+.hb-toast-icon-parent,
+.hb-toast-close-parent {
+    text-align: center;
+}
+
+.hb-toast-close {
+    @extend .link;
+}
+
+.hb-toast-close:hover {
+    @extend .link-hover;
+}
+
+.hb-toast-msg-inner {
+    padding: 10px 2px;
+}
+
+.hb-toast-msg-txt {
+    margin: 0px;
+}

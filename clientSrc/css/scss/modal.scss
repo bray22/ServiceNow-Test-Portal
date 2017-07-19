@@ -1,0 +1,244 @@
+/*
+* modal styling
+*/
+
+.hub-modal-backdrop {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: $color-darkest-blue;
+    z-index: $z-index-modal-backdrop;
+}
+
+.hub-modal {
+    @extend .center-all;
+    width: 60%;
+    height: 60%;
+    z-index: $z-index-modal;
+}
+
+.hub-modal-transition {
+    transition: width 300ms ease-in-out,
+                height 300ms ease-in-out;
+}
+
+.hub-modal-inner {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.hub-modal-header {
+    width: 100%;
+    background-color: $color-dark-blue;
+    color: $color-white;
+    border-radius: 8px 8px 0px 0px;
+    text-align: center;
+}
+
+.hub-modal-navigation {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+}
+
+.hub-modal-nav-back {
+    color: $color-white;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.hub-modal-close {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    font-size: 1.5em;
+    cursor: pointer;
+    @extend .link-transition;
+}
+
+.hub-modal-deeplink {
+    position: absolute;
+    right: 36px;
+    top: 7px;
+    font-size: 1.5em;
+    cursor: pointer;
+    @extend .link-transition;
+}
+
+.hub-modal-close:hover,
+.hub-modal-deeplink:hover {
+    color: $color-light-blue;
+}
+
+.hub-modal-deeplink.thinking {
+    cursor: wait;
+    pointer-events: none;
+}
+
+.hub-modal-title {
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.hub-modal-deeplink-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.hub-modal-deeplink-close {
+    text-align: right;
+}
+
+.hub-modal-deeplink-close-icon,
+.hub-modal-deeplink-copy-link,
+.hub-modal-deeplink-url {
+    @extend .link;
+}
+
+.hub-modal-deeplink-close-icon:hover,
+.hub-modal-deeplink-copy-link:hover,
+.hub-modal-deeplink-url:hover {
+    @extend .link-hover;
+}
+
+.deeplink-copy-data {
+    height: 0px;
+    border: none;
+    padding: 0px;
+}
+
+.hub-modal-deeplink-close-icon {
+    font-size: 1.25em;
+}
+
+.hub-modal-deeplink-msg {
+    background-color: $color-white;
+    padding: 15px;
+    border-bottom: 1px solid $color-grey;
+}
+
+.hub-modal-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    background-color: $color-white;
+}
+
+.hub-modal-body-inner {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.hub-modal-body-inner.confirmation-modal {
+    padding: 20px;
+}
+
+.iframe-modal-iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-html-body {
+    overflow-y: auto;
+}
+
+.hub-modal-footer {
+    width: 100%;
+    background-color: $color-white;
+    padding: 10px;
+    border-top: 1px solid $color-grey;
+    overflow: hidden;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.confirmation-btn {
+    color: $color-white;
+    background-color: $color-blue;
+    font-weight: bold;
+    transition: background-color 150ms linear;
+    float: right;
+    margin-left: 15px;
+}
+
+.confirmation-btn:hover {
+    background-color: $color-light-blue;
+}
+
+/* 
+
+------ OLD ------
+keep this around for any integrated widgets using the 
+default bootstrap modal
+------ OLD ------
+
+*/
+
+.modal button.close {
+    color: $color-white;
+    opacity: 1;
+}
+
+.modal .close:hover {
+    color: #DEDEDE;
+    opacity: 1;
+}
+
+.modal-header {
+    background-color: $color-dark-blue;
+}
+
+.modal-title {
+    color: $color-white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.modal-close {
+    opacity: 1;
+    text-shadow: none;
+    border: none;
+}
+
+.modal-close-btn {
+    color: $color-white;
+    opacity: 1;
+    @extend .link-transition;
+}
+
+.modal-close-btn:hover {
+    color: $color-light-blue;
+    text-shadow: none;
+}
+
+.modal-dialog {
+    width: 60%;
+    margin: 100px auto;
+}
+
+.modal-body {
+    height: 500px;
+}
+
+.hub-html-modal .modal-body {
+    overflow: auto;
+}
+
+.iframe-modal-iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}

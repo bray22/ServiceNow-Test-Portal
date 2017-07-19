@@ -1,0 +1,131 @@
+/*
+* alert-menu styling
+*/
+
+#alert-menu {
+    position: absolute;
+    width: 383px;
+    z-index: $z-index-header-menu;
+    background-color: $color-white;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    border: 1px solid rgba(0,0,0,0.175);
+    border-radius: 0px 0px 4px 4px;
+}
+
+#alert-menu-inner {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    background-color: $color-white;
+}
+
+#alert-menu-header {
+    background-color: $color-off-white;
+    border-bottom: 1px solid #999;
+}
+
+#alert-menu-body {
+    height: 100%;
+}
+
+#alert-menu-footer {
+    background-color: $color-off-white;
+    border-top: 1px solid #999;
+}
+
+#alert-menu-footer-inner {
+    width: 100%;
+    height: 100%;
+}
+
+#alert-menu-title {
+    margin-left: 10px;
+}
+
+#alert-menu-body-inner {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0px 10px 0px 10px;
+}
+
+#hb-alert-subscription-link,
+#hb-clear-alerts-link,
+#hb-view-all-alerts-link,
+.hb-dismiss-alert {
+    @extend .link;
+}
+
+#hb-alert-subscription-link:hover,
+#hb-clear-alerts-link:hover,
+#hb-view-all-alerts-link:hover,
+.hb-dismiss-alert:hover {
+    @extend .link-hover;
+}
+
+.hb-alert-subscriptions,
+.hb-clear-alerts,
+.hb-view-all-alerts {
+    padding: 10px;
+}
+
+.hb-alert-subscriptions,
+.hb-view-all-alerts,
+.hb-dismiss-alert-col {
+    text-align: right;
+}
+
+.hb-alert-item {
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid $color-light-grey;
+}
+
+.hb-alert-item:last-child {
+    border-bottom: none;
+}
+
+.hb-alert-item-description,
+.hb-alert-item-timestamp {
+    color: $color-grey;
+}
+
+.hb-alert-icon-col {
+    padding: 5px;
+}
+
+.hb-alert-data-col {
+    padding-left: 7px;
+}
+
+.hb-alert-item-title.with-link {
+    @extend .link;
+}
+
+.hb-alert-item-title.with-link:hover {
+    @extend .link-hover;
+}
+
+.hb-alert-item-icon {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.hb-alert-item.new-alert-item .hb-alert-item-title {
+    font-weight: bold;
+}
+
+.hb-empty-alert-message {
+    font-style: italic;
+    font-size: 0.95em;
+    color: $color-grey;
+    padding: 20px;
+}

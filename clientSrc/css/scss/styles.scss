@@ -1,0 +1,29 @@
+/*
+* styles.scss
+*
+* final compilation of all scss modules
+*/
+
+@import "variables.scss"; 
+@import "animation.scss";
+
+@import "bootstrap-override.scss";
+@import "pagesetup.scss";
+@import "screens.scss";
+
+@import "navbar.scss";
+@import "search-results.scss";
+@import "desktop-options.scss";
+@import "help-menu.scss";
+@import "alert-menu.scss";
+
+@import "modal.scss";
+@import "appmode.scss";
+@import "content-library.scss";
+@import "widget.scss";
+@import "news.scss";
+@import "toast.scss";
+@import "livewire.scss";
+@import "devmenu.scss";
+@import "expiration.scss";
+@import "balloon.scss"; 

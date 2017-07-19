@@ -1,0 +1,59 @@
+/**
+* dev-menu styles
+*/
+
+
+#devmenu {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    top: -250px;
+    left: 15px;
+    z-index: $z-index-devmenu;
+    transition: top 350ms ease-in-out;
+    will-change: top;
+}
+
+#devmenu.show {
+    top: 0px;
+}
+
+#devmenu-inner {
+    width: 100%;
+    height: 100%;
+}
+
+#devmenu-container {
+    background-color: $color-white;
+    height: 100%;
+    padding: 10px;
+}
+
+#devmenu-trigger {
+    text-align: center;
+    border-top: 1px solid $color-light-grey;
+    height: 30px;
+}
+
+#devmenu-trigger-inner {
+    @extend .material-dropshadow;
+    cursor: pointer;
+    background-color: $color-off-white;
+    border-radius: 0px 0px 10px 10px;
+    width: 128px;
+    padding: 0px 5px 5px 5px;
+}
+
+#devmenu-trigger-txt {
+    @extend .no-select;
+    border-radius: 0px 0px 5px 5px;
+}
+ 
+#devmenu-list {
+    list-style: none;
+}
+
+#dev-stats {
+    padding-left: 60px;
+    margin-bottom: 12px;
+}

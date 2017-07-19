@@ -1,0 +1,133 @@
+/*
+* desktop options menu
+*/
+
+
+#desktop-menu {
+	position: absolute;
+    z-index: $z-index-header-menu;
+    width: 333px;
+    background-color: $color-white;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 0px 0px 4px 4px;
+
+    .divider {
+        background-color: $color-light-grey;
+    }
+}
+
+#create-desktop {
+    text-align: right;
+    padding: 5px 10px 0px 0px;
+    font-size: 0.9em;
+}
+
+#create-desktop-link {
+    @extend .link;
+}
+
+#create-desktop-link:hover {
+    @extend .link-hover;
+}
+
+#desktop-menu-list {
+    padding: 0px 0px 0px 15px;
+}
+
+.hb-deskop-group-txt {
+    font-weight: bold;
+}
+
+.hb-desktop-name {
+    margin-top: 10px;
+}
+
+.hb-desktop-menu-item {
+    padding: 5px 0px 5px 15px;
+}
+
+.hb-desktop-menu-item-name {
+    @extend .link-transition;
+}
+
+.hb-desktop-menu-item-name:hover {
+    @extend .link;
+}
+
+.hb-desktop-menu-item-options {
+    @extend .link-transition;
+    text-align: center;
+}
+
+.hb-desktop-menu-item-options:hover {
+    @extend .link;
+}
+
+#shared-desktops {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.desktop-menu-shared-link {
+    @extend .link;
+}
+
+.desktop-menu-shared-link:hover {
+    @extend .link-hover;
+}
+
+.hb-desktop-menu-group {
+    margin: 10px 0px 0px 0px;
+}
+
+.hb-desktop-menu-group:first-child {
+    margin: 0px;
+}
+
+.desktop-confirm-btn,
+.desktop-cancel-btn {
+    @extend .link;
+    margin-top: 9px;
+}
+
+.desktop-confirm-btn:hover,
+.desktop-cancel-btn:hover {
+    @extend .link-hover;
+}
+
+.desktop-input-error {
+    border: 1px solid red;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(255,0,0,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(255,0,0,1);
+    box-shadow: 0px 0px 5px 0px rgba(255,0,0,1);
+}
+
+.desktop-name-input {
+    width: 90%;
+}
+
+.hb-desktop-options {
+    @extend .material-dropshadow;
+    position: absolute;
+    z-index: $z-index-desktop-option-menu;
+    padding: 5px;
+    background-color: $color-white;
+}
+
+.hb-desktop-option-row {
+    padding: 5px 10px 5px 0px;
+}
+
+.desktop-option-icon {
+    margin-right: 10px;
+}
+
+.hb-desktop-option-row {
+    @extend .link-transition;
+}
+
+.hb-desktop-option-row:hover {
+    @extend .link;
+}

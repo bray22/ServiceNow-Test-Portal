@@ -1,0 +1,207 @@
+/*
+* hub-navbar styling
+*/
+
+#hub-navbar {
+    @extend .material-dropshadow;
+    min-height: 70px;
+    padding: 0px 20px;
+    background-color: $color-dark-blue;
+    color: $color-white;
+    position: relative;
+    overflow: hidden; /* floating-children height */
+}
+
+.navbar-icon-top {
+    padding: 0px 7.5px;
+}
+
+.navbar-icon {
+    font-size: 1.6em;
+}
+
+#hub-navbar-left {
+    display: inline-block;
+    height: 100%;
+}
+
+#hub-navbar-right {
+    display: inline-block;
+    float: right;
+    height: 100%;
+}
+
+#hub-navbar-brand {
+    display: inline-block;
+}
+
+#nav-logo-big {
+    width: 312px;
+    height: 60px;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+#nav-logo-small {
+    width: 65px;
+    height: 70px;
+    display: none;
+    cursor: pointer;
+}
+
+#hub-navbar-desktops {
+    @extend .link;
+    color: $color-white;
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: -8px;
+}
+
+#hub-navbar-desktops:hover {
+    @extend .link-hover;
+}
+
+#desktop-name {
+    vertical-align: 4px;
+    margin: 0px 5px;
+}
+
+.nav-desktop-el {
+    vertical-align: 7px;
+}
+
+#hub-navbar-search {
+    display: inline-block;
+    width: 256px;
+    vertical-align: 7px;
+    margin-left: 7.5px;
+}
+
+#hub-navbar-library {
+    @extend .link;
+    color: $color-white;
+    display: inline-block;
+}
+
+#hub-navbar-news {
+    @extend .link;
+    position: relative;
+    color: $color-white;
+    display: inline-block;
+}
+
+#hub-navbar-news:hover,
+#hub-navbar-library:hover {
+    @extend .link-hover;
+}
+
+#hb-news-count,
+#hb-alert-count {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background-color: $color-red;
+    padding: 3px 5px 0px 5px;
+    border-radius: 5px;
+    font-size: 0.85em;
+}
+
+#hub-navbar-incident {
+    @extend .link;
+    color: $color-white;
+    display: inline-block;
+}
+
+#hub-navbar-incident-icon {
+    vertical-align: 2px;
+}
+
+#hub-navbar-incident:hover {
+    @extend .link-hover;
+}
+
+#hub-navbar-help {
+    @extend .link;
+    color: $color-white;
+    display: inline-block;
+}
+
+#hub-navbar-help:hover {
+    @extend .link-hover;
+}
+
+#hub-navbar-user {
+    display: inline-block;
+    padding-left: 15px;
+    padding-top: 11px;
+}
+
+#hb-user-icon {
+    margin-right: 5px;
+    position: relative;
+}
+
+#hub-navbar-user-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#hub-navbar-right-icon-group {
+    display: inline-block;
+    vertical-align: 14px;
+}
+
+#hub-navbar-alerts {
+    @extend .link;
+    color: $color-white;
+    display: inline-block;
+    position: relative;
+}
+
+#hub-navbar-alerts:hover {
+    @extend .link-hover;
+}
+
+#hub-navbar-company-logo {
+    display: inline-block;
+}
+
+#hub-navbar-company-logo-img {
+    margin-top: 6px;
+}
+
+@media screen and (max-width: 1088px) {
+    #nav-logo-big {
+        display: none;
+    }
+    #nav-logo-small {
+        display: inline-block;
+    }
+    #hub-navbar-company-logo {
+        display: none;
+    }
+
+    .navbar-brand {
+        padding: 0px !important;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #desktop-name {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #hub-navbar-user {
+        display: none;
+    }
+
+    #hub-navbar-right {
+        padding-top: 18px;
+    }
+}

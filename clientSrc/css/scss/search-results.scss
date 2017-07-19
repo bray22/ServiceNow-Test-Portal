@@ -1,0 +1,77 @@
+/*
+* search results styling
+*/
+
+
+#navbar-search-results {
+    @extend .material-dropshadow;
+    background-color: $color-white;
+    z-index: $z-index-header-menu;
+    width: 420px;
+
+    .divider {
+        background-color: $color-light-grey;
+        height: 3px;
+    }
+}
+
+.search-group-widgets,
+.search-group-services {
+    padding-left: 0px;
+}
+
+.nav-search-widget,
+.nav-search-service {
+    padding: 5px 0px 5px 40px;
+    font-size: 0.9em;
+    list-style-type: none;
+    transition: background-color 50ms linear;
+}
+
+.nav-search-widget.selected,
+.nav-search-service.selected {
+    background-color: $color-light-blue;
+
+    .widget-result-add,
+    .widget-result-add:hover,
+    .widget-result-appmode,
+    .widget-result-appmode:hover,
+    .service-link,
+    .service-link:hover {
+        color: $color-white;
+    }
+}
+
+.search-group-title {
+	padding: 10px 15px 10px 10px;
+    font-weight: bold;
+}
+
+.widget-result-add {
+    margin-right: 10px;
+}
+
+.widget-result-add,
+.widget-result-appmode,
+.service-link,
+.emc-search {
+    @extend .link;
+}
+
+.widget-result-add:hover,
+.widget-result-appmode:hover,
+.service-link:hover,
+.emc-search:hover {
+    @extend .link-hover;
+}
+
+.nav-search-widget-txt,
+.service-link {
+    font-weight: bold;
+}
+
+.emc-search {
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 10px 15px 10px 10px;
+}

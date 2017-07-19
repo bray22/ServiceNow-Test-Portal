@@ -1,0 +1,377 @@
+/*
+* all widget-specific css found here
+*/
+
+
+/*************************************************/
+/*                      Widgets                  */
+/*************************************************/
+
+.gridster-widget {
+    @extend .material-dropshadow;
+    background-color: $color-white;
+    overflow: hidden;
+}
+
+.widget-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+} 
+
+.widget-header {
+    width: 100%;
+}
+
+.widget-header-inner {
+    padding: 2px 5px 2px 5px;
+}
+
+.widget-body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    flex: 1;
+    flex-basis: 100%;
+}
+
+.widget-body-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+.widget-footer {
+    width: 100%;
+    height: 15px;
+}
+
+.widget-footer-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.current-size-btn {
+    padding: 1px 5px;
+    margin: -3px;
+}
+
+.widget-title {
+    padding-top: 3px;
+    font-size: 0.8em;
+    color: $color-dark-grey;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    height: 21px;
+}
+
+.widget-title-text {
+    white-space: nowrap;
+}
+
+.widget-title[data-nofit="0"] .widget-title-text {
+    @extend .horizontal-center;
+}
+
+.widget-title[data-nofit="1"] .widget-title-text {
+    transition: left 2s ease-in-out;
+    position: absolute;
+    left: 0px; /* dynamically set via JS during :hover */
+}
+
+.widget-size-items {
+    min-width: 64px;
+    left: -29px;
+}
+
+.widget-noiframe-element {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.widget-iframe,
+.no-iframe-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: none;
+    overflow: hidden;
+    background-color: $color-white;
+}
+
+.config-iframe-backdrop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: $color-black;
+    will-change: opacity;
+}
+
+.config-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 100%;
+    transition: top 300ms ease-in-out 150ms;
+    will-change: top;
+}
+
+.config-content-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.config-content-inner-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.config-header {
+    font-size: 0.8em;
+}
+
+.config-header-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: $color-white;
+}
+
+.config-header-top,
+.config-header-second {
+    padding: 0px 10px;
+    overflow: hidden; /* take floating children height */
+}
+
+.config-header-second {
+    padding-top: 5px;
+}
+
+.config-header-author {
+    position: relative;
+    clear: both;
+    padding: 0px 10px;
+}
+
+.config-header-author-inner {
+    @extend .link;
+}
+
+.config-header-author-inner:hover {
+    @extend .link-hover;
+}
+
+.config-header-divider {
+    margin: 5px 0px;
+    clear: both;
+    padding: 0px 10px;
+}
+
+.config-header-rename {
+    padding-top: 5px;
+    height: 30px;
+}
+
+.config-header-rename-input {
+    display: inline-block;
+    padding: 2px 5px;
+    margin-left: 10px;
+    border: 1px solid $color-grey;
+    width: 63%;
+    height: 90%;
+    font-size: 0.9em;
+}
+
+.config-header-rename-button {
+    width: 25%;
+    height: 90%;
+    max-width: 50px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.config-header-divider-inner {
+    height: 1px;
+    width: 100%;
+    background-color: $color-grey;
+}
+
+.config-header-title {
+    float: left;
+    font-weight: bold;
+}
+
+.config-header-version {
+    float: right;
+}
+
+.config-body {
+    position: relative;
+    height: 100%;
+}
+
+.config-body-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.widget-config-iframe,
+.no-iframe-config {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: none;
+    background-color: $color-white;
+    
+}
+
+.widget-no1x1-content {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.widget-footer-trigger {
+    text-align: center;
+    background-color: $color-off-white;
+    border-top: 1px solid #CCC;
+    color: $color-grey;
+}
+
+.widget-footer-trigger-icon {
+    font-size: 1.4em;
+    font-weight: bold;
+    vertical-align: top;
+    margin-top: -3px;
+}
+
+.widget-navigation {
+    margin: auto;
+    padding: 0px;
+    background-color: $color-off-white;
+    border-top: 1px solid #CCC;
+    width: 100%;
+    float: left;
+    position: absolute;
+    top: 100%;
+    transition: top 200ms linear;
+}
+
+.widget-navigation.show-nav {
+    top: -18px;
+}
+
+.settings-arrow {
+    position: absolute;
+    left: 13px;
+    top: 12px;
+    display: none;
+    font-size: 0.7em !important;
+}
+
+.widget-nav-icon.fa-cog {
+    position: relative;
+}
+
+.widget-nav-icon {
+    height: 32px;
+    padding: 7px 11px 0px 10px;
+    font-size: 1.2em;
+}
+
+.widget-nav-item {
+    @extend .link-transition;
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+    color: $color-grey;
+    border-right: 1px solid $color-light-grey;
+    float: right;
+    width: 20%;
+    text-align: center;
+}
+
+.widget-nav-item:first-child {
+    border-right: none;
+}
+
+.widget-nav-item:hover {
+    color: $color-light-blue;
+}
+
+.gridster-widget.configure {
+    .settings-arrow {
+        display: block !important;
+    }
+    .settings-li {
+        color: #4A4A4A !important;
+    }
+    .config-content {
+        top: 0% !important;
+    }
+}
+
+.gridster-drag-widget {
+    width: 100%;
+    height: 100%;
+}
+
+.gridster-drag-widget .widget-drag-handle {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gridster-drag-widget-inner {
+    @extend .center-all;
+}
+
+.widget-size-dropdown {
+    text-align: right;
+}
+
+.size-switch:hover {
+    background-color: $color-light-blue;
+    color: $color-white;
+}
+
+.widget-size-dropdown-caret {
+    font-size: 0.9em;
+}
+
+.widget-drag-handle {
+    text-align: left;
+    cursor: move;
+    color: $color-grey;
+}

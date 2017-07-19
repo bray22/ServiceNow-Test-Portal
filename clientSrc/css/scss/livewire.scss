@@ -1,0 +1,78 @@
+/*
+* livewire styles
+*/
+
+
+#livewire {
+    position: absolute;
+    width: 350px;
+    height: 100%;
+    top: 100%;
+    right: 22px;
+    margin-top: -30px;
+    z-index: $z-index-livewire;
+    transition: margin-top 350ms ease-in-out,
+                top 350ms ease-in-out;
+    will-change: margin-top, top;
+}
+
+#livewire.show {
+    top: 0%;
+    margin-top: 0px;
+}
+
+#livewire-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#livewire-container {
+    @extend .material-dropshadow;
+    background-color: $color-white;
+    height: 100%;
+    z-index: $z-index-livewire;
+    position: relative;
+    flex: 1;
+    flex-basis: 100%;
+}
+
+#livewire-trigger {
+    border-bottom: 1px solid $color-light-grey;
+    height: 30px;
+}
+
+#livewire-trigger-inner {
+    @extend .material-dropshadow;
+    display: inline-block;
+    cursor: pointer;
+    background-color: $color-off-white;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5px 15px;
+    float: right;
+}
+
+#livewire-trigger-txt {
+    @extend .no-select;
+    border-radius: 0px 0px 5px 5px;
+}
+
+#livewire-expand {
+    @extend .link;
+    margin-left: 10px;
+}
+
+#livewire-expand:hover {
+    @extend .link-hover;
+}
+
+#livewire-plugin {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 10px;
+}

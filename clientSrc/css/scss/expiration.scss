@@ -1,0 +1,39 @@
+/*
+* session expiration timeout styles
+*/
+
+#expiration {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $z-index-expiration;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hb-expiration-blur {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}
+
+#expiration-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#expiration-content {
+    @extend .center-all;
+    text-align: center;
+    color: $color-white;
+    font-size: 2em;
+}
+
+#expiration-reload {
+    @extend .link;
+}
+
+#expiration-reload:hover {
+    @extend .link-hover;
+}

@@ -1,0 +1,223 @@
+/*
+* all styles relating to the major 'screen's
+*/
+
+
+/*************************************************/
+/*              Welcome Screen                   */
+/*************************************************/
+
+#session-init {
+    position: fixed;
+    top: 5000px;
+    left: 0px;
+    visibility: hidden;
+    z-index: 0;
+    height: 0px;
+    border: none;
+}
+
+#loading-bkg {
+    width: 100%;
+    height: 100%;
+    background: #283048;
+    background: -webkit-$background-loading-screen;
+    background: $background-loading-screen;
+}
+
+#loading-content {
+    display: inline-block;
+}
+
+#loading {
+    z-index: $z-index-welcome-page;
+}
+
+#loading-center {
+    @extend .center-all;
+}
+
+#loading-image {
+    width: 768px;
+    height: 288px;
+}
+
+#loading-slider, 
+#loading-slider:before {
+    height: 3px;
+    width: 100%;
+    margin: 0px;
+}
+
+#loading-slider {
+    background-color: $color-off-white;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+}
+
+@-webkit-keyframes loading-line {
+    0% {
+        margin-left: 0px;
+        margin-right: 100%;
+    }
+    50% {
+        margin-left: 25%;
+        margin-right: 0%;
+    }
+    100% {
+        margin-left: 100%;
+        margin-right: 0px;
+    }
+}
+
+@keyframes loading-line {
+    0% {
+        margin-left: 0px;
+        margin-right: 100%;
+    }
+    50% {
+        margin-left: 25%;
+        margin-right: 0%;
+    }
+    100% {
+        margin-left: 100%;
+        margin-right: 0px;
+    }
+}
+
+#loading-slider:before {
+    background-color: $color-light-blue;
+    content: "";
+    -webkit-animation: loading-line 2s linear infinite;
+    animation: loading-line 2s linear infinite;
+}
+
+#loading-slider-line {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+#loading-slider-break {
+    position: absolute;
+    width: 6px;
+    height: 3px;
+}
+
+#loading-slow-message {
+    color: $color-white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/*************************************************/
+/*                 Fatal Error                   */
+/*************************************************/
+
+.temp-header {
+    width: 100%;
+    height: 70px;
+    position: relative;
+    background-color: $color-dark-blue;
+    @extend .material-dropshadow;
+}
+
+.temp-hublogo {
+    position: absolute;
+    left: 20px;
+    height: 100%;
+    width: 256px;
+    background-image: url("../res/img/logo-nav-large.png");
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    background-position-y: 14px;
+}
+
+#fatalerror-body {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    background-color: $color-white;
+}
+
+#fatalerror-left {
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+#fatalerror-right {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    background-image: url("../res/img/fatal-error.png");
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+}
+
+/*************************************************/
+/*              Invalid Browser                  */
+/*************************************************/
+
+#invalid-browser-top {
+    padding-top: 50px;
+}
+
+#invalid-message {
+    margin: 25px 0px 25px 0px;
+}
+
+#invalid-browser-inner {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#chrome-icon,
+#firefox-icon,
+#ie-icon,
+#safari-icon {
+    width: 92px;
+    height: 92px;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+#chrome-icon {
+    background-image: url("../res/img/chrome-icon.png");
+}
+
+#firefox-icon {
+    background-image: url("../res/img/firefox-icon.png");
+}
+
+#ie-icon {
+    background-image: url("../res/img/ie-icon.png");
+}
+
+#safari-icon {
+    background-image: url("../res/img/safari-icon.png");
+}
+
+/*************************************************/
+/*              Maintenance Screen               */
+/*************************************************/
+
+#maintenance-body {
+    margin-top: 20px;
+}
+
+#maintenence-img-inner {
+    background-image: url("../res/img/maintenance-helmet.png");
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    width: 245px;
+    height: 205px;
+    margin: 0 auto;
+}

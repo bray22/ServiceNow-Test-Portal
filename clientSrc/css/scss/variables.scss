@@ -1,0 +1,224 @@
+/*
+* variables.scss
+*
+* all variables and common parent classes live here
+*/
+
+/*************************************************/
+/*              Variable Declarations            */
+/*************************************************/
+
+$color-blue:                    #007DB8;
+$color-light-blue:              #169BD5;
+$color-dark-blue:               #2E3D54;
+$color-darkest-blue:            #272E38;
+
+$color-white:                   #FFF;
+$color-off-white:               #F7F7F7;
+$color-light-grey:              #E2E2E2;
+$color-grey:                    #999;
+$color-dark-grey:               #333;
+$color-black:                   #000;
+
+$color-green:                   #579E48;
+$color-orange:                  #F39C12;
+$color-red:                     #C44D3D;
+
+$color-balloon:                 #F2FBFF;
+$background-loading-screen:     linear-gradient(to left, #283048, #859398);
+$background-desktop:            linear-gradient(to top, #D9DBDA, #eef2f3);
+
+
+$z-index-desktop-container:     1;
+$z-index-livewire:              14;
+$z-index-devmenu:               15;
+$z-index-gridster-backdrop:     16;
+$z-index-news-menu:             19;
+$z-index-appmode:               50;
+$z-index-header:                100;
+$z-index-header-menu:           101;
+$z-index-desktop-option-menu:   102;
+$z-index-content-library:       103;
+$z-index-news:                  104;
+$z-index-modal-backdrop:        105;
+$z-index-modal:                 106;
+$z-index-toast-container:       107;
+$z-index-welcome-page:          499;
+$z-index-expiration:            500;
+$z-index-balloon:               2000;
+
+
+/*************************************************/
+/*              Font Declaration                 */
+/*************************************************/
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../res/font/Roboto-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../res/font/Roboto-Italic.woff") format("woff");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../res/font/Roboto-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../res/font/Roboto-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif !important;
+}
+ 
+/*************************************************/
+/*              Parent Classes                   */
+/*************************************************/
+
+/* needs relative parent */
+.vertical-center {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* needs relative parent */
+.horizontal-center {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+/* needs relative parent */
+.center-all {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+/* needs relative parent */
+.scroll-parent-height {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    overflow-y: auto;
+}
+
+.link-transition {
+    transition: color 150ms linear;
+}
+
+.link {
+    color: $color-blue;
+    cursor: pointer;
+    @extend .link-transition;
+}
+
+.link-hover {
+    color: $color-light-blue;
+}
+
+.material-dropshadow {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.pointer-compress {
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    transition: -webkit-transform 150ms linear,
+                -ms-transform 150ms linear,
+                transform 150ms linear;
+}
+
+.pointer-compress:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.pointer-compress:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* needs relative parent */
+.hub-loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.hub-loading-inner {
+    @extend .center-all;
+    width: 32px;
+    height: 32px;
+}
+
+@-webkit-keyframes loading-spin {
+    0% { 
+        -webkit-transform: rotate(0deg); 
+        -ms-transform: rotate(0deg); 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes loading-spin {
+    0% { 
+        -webkit-transform: rotate(0deg); 
+        -ms-transform: rotate(0deg); 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.loading-icon {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 0.25rem solid rgba(255, 255, 255, 0.3);
+    border-top-color: $color-blue;
+    border-width: 0.25rem;
+    -webkit-animation: loading-spin 750ms infinite linear;
+    animation: loading-spin 750ms infinite linear;
+}

@@ -1,0 +1,126 @@
+/*
+* all page-setup css found here
+*/
+
+
+html, 
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    background: #8e9eab;
+    background: $background-desktop;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+#content-header {
+    position: relative;
+    z-index: $z-index-header;
+}
+
+#content-body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    flex: 1 1 100%;
+}
+
+#desktop-container {
+    width: 100%;
+    height: 100%;
+    z-index: $z-index-desktop-container;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#gridster-backdrop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $color-dark-blue;
+    z-index: $z-index-gridster-backdrop;
+}
+
+#gridster-container {
+    @extend .no-select;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+}
+
+.gridster-desktop {
+    @extend .no-select;
+    margin: 0px auto;
+}
+
+#gridster-container-inner {
+    padding-bottom: 30px;
+}
+
+.hub-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#powered-by {
+    color: $color-black;
+    font-size: 0.85em;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.hub-broadcast-title {
+    font-weight: bold;
+}
+
+.hub-broadcast-subtext {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.hub-broadcast-message {
+    margin-top: 5px;
+}
+
+/* Walkthrough owl-carousel-tweaks */
+
+.walkthrough-item {
+    padding: 20px;
+    text-align: center;
+}
+
+.walkthrough-img {
+    width: 269px !important;
+    height: 150px !important;
+    display: inline-block !important;
+}
+
+.owl-prev,
+.owl-next {
+    background: $color-blue !important;
+}
