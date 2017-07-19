@@ -1,0 +1,624 @@
+<div id="hub-templates">
+
+    <!--        
+
+        Define all HUB templates here...
+            the first <div> is not included as part of the template, 
+            only used for ID selection by the View who instanciates it 
+
+    -->
+
+
+    <!-- model: WidgetModel -->
+    <div id="Widget">
+        <div class="gridster-widget" data-instanceguid="{{ InstanceGuid }}" data-col="{{ X }}" data-row="{{ Y }}" data-sizex="{{ Width }}" data-sizey="{{ Height }}">
+            <div class="widget-inner">
+                <div class="widget-header">
+                    <div class="widget-header-inner">
+                        <div class="row">
+                            <div class="col-xs-2 widget-drag-handle">
+                                <span class="fa fa-arrows"></span>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="widget-title">
+                                    <span class="widget-title-text">{{ WidgetTitle }}</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="dropdown widget-size-dropdown">
+                                    <button class="btn btn-default dropdown-toggle current-size-btn" data-toggle="dropdown">
+                                        <span class="current-size-txt">{{ CurrentSize }}</span>
+                                        <span class="fa fa-caret-down widget-size-dropdown-caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu widget-size-items"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-body">
+                    <div class="widget-body-inner">
+                        <iframe class="widget-iframe" width="100%" height="100%"></iframe>
+                        <div class="no-iframe-content"></div>
+                        <div class="config-iframe-backdrop" style="display: none; opacity: 0;"></div>
+                        <div class="config-content">
+                            <div class="config-content-inner">
+                                <div class="config-content-inner-content">
+                                    <div class="config-header">
+                                        <div class="config-header-inner">
+                                            <div class="config-header-top">
+                                                <span class="config-header-title">||str:ConfigHeaderTitle||</span>
+                                                <span class="config-header-version">v{{ Version }}</span>
+                                            </div>
+                                            <div class="config-header-divider">
+                                                <div class="config-header-divider-inner"></div>
+                                            </div>
+                                            <div class="config-header-author">
+                                                <span class="config-header-author-inner on-email-author">
+                                                    <span class="fa fa-envelope"></span>
+                                                    <span class="config-header-author-name">{{ AuthorName }}</span>
+                                                </span>
+                                            </div>
+                                            <div class="config-header-second">
+                                                <span class="config-header-title">||str:ConfigHeaderRenameTitle||</span>
+                                            </div>
+                                            <div class="config-header-rename">
+                                                <input type="text" class="config-header-rename-input form-control" placeholder="||str:ConfigHeaderInputPlaceholder||">
+                                                <button class="btn btn-xs btn-primary config-header-rename-button on-rename" type="button">||str:ConfigHeaderRenameButton||</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="config-body">
+                                        <div class="config-body-inner">
+                                            <iframe class="widget-config-iframe"></iframe>
+                                            <div class="no-iframe-config"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-footer">
+                    <div class="widget-footer-inner">
+                        <div class="widget-footer-trigger">
+                            <span class="fa fa-angle-up widget-footer-trigger-icon"></span>
+                        </div>
+                        <ul class="widget-navigation">
+                            <li class="widget-nav-item on-remove" data-toggle="tooltip" data-placement="top" title="||str:WidgetRemove||">
+                                <span class="widget-nav-icon fa fa-trash"></span>
+                            </li>
+                            <li class="widget-nav-item on-help" data-toggle="tooltip" data-placement="top" title="||str:WidgetHelp||">
+                                <span class="widget-nav-icon fa fa-question-circle"></span>
+                            </li>
+                            <li class="widget-nav-item on-submitbug" data-toggle="tooltip" data-placement="top" title="||str:WidgetSubmitBug||">
+                                <span class="widget-nav-icon fa fa-bug"></span>
+                            </li>
+                            <li class="widget-nav-item settings-li on-settings" data-toggle="tooltip" data-placement="top" title="||str:WidgetSettings||">
+                                <span class="widget-nav-icon fa fa-cog">
+                                    <span class="widget-nav-icon fa fa-arrow-down settings-arrow"></span>
+                                </span>
+                            </li>
+                            <li class="widget-nav-item on-appmode" data-toggle="tooltip" data-placement="top" title="||str:WidgetLaunchAppmode||">
+                                <span class="widget-nav-icon fa fa-rocket"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: WidgetModel -->
+    <div id="Widget-NoContent">
+        <div class="widget-no1x1-content on-appmode" style="background-image: url('{{ImageUrl}}');"></div>
+    </div>
+
+    <!-- model: SizeModel -->
+    <div id="Widget-Size-Item">
+        <li>
+            <a href="javascript:;" class="size-switch on-size-switch" data-widgetsizex="{{ X }}" data-widgetsizey="{{ Y }}">{{ X }}x{{ Y }}</a>
+        </li>
+    </div>
+
+    <!-- model: WidgetModel -->
+    <div id="Appmode">
+        <div class="widget-appmode">
+            <div class="widget-appmode-body">
+                <div class="widget-appmode-header">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <h3 class="appmode-header-title">
+                                <span class="appmode-title">{{ AppmodeTitle }}</span>
+                                <span class="appmode-title-initial">{{ AppmodeTitleInitial }}</span>
+                            </h3>
+                        </div>
+                        <div class="col-xs-4 appmode-icons">
+                            <span class="fa fa-question-circle fa-2x appmode-help on-help" data-toggle="tooltip" data-placement="bottom" title="||str:AppModeHelp||"></span>
+                            <span class="fa fa-share-square-o fa-2x appmode-deeplink on-deeplink" data-toggle="tooltip" data-placement="bottom" title="||str:DeepLinkAppmodeBtnTitle||"></span>
+                            <span class="fa fa-times fa-2x appmode-close on-close-appmode" data-toggle="tooltip" data-placement="bottom" title="||str:CloseAppmodeBtnTitle||"></span>
+                        </div>
+                    </div>
+                    <div class="widget-appmode-divider">
+                        <div class="widget-appmode-divider-inner"></div>
+                    </div>
+                </div>
+                <div class="widget-appmode-content">
+                    <div class="widget-appmode-content-inner">
+                        <div class="widget-appmode-height-set">
+                            <iframe class="widget-appmode-iframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="Iframe-Appmode">
+        <div class="iframe-appmode">
+            <div class="iframe-appmode-body">
+                <div class="iframe-appmode-header">
+                    <div class="row">
+                        <div class="col-xs-11">
+                            <h3 class="iframe-appmode-title">{{ title }}</h3>
+                        </div>
+                        <div class="col-xs-1 appmode-icons">
+                            <span class="fa fa-times fa-2x appmode-close on-close-appmode" data-toggle="tooltip" data-placement="bottom" title="||str:CloseAppmodeBtnTitle||"></span>
+                        </div>
+                    </div>
+                    <div class="iframe-appmode-divider">
+                        <div class="iframe-appmode-divider-inner"></div>
+                    </div>
+                </div>
+                <div class="iframe-appmode-content">
+                    <div class="iframe-appmode-content-inner">
+                        <div class="iframe-appmode-height-set">
+                            <iframe src="{{ url }}" class="iframe-appmode-iframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: custom object -->
+    <div id="Modal-View">
+        <div class="hub-modal">
+            <div class="hub-modal-inner">
+                <div class="hub-modal-header">
+                    <span class="hub-modal-navigation" style="display: none;">
+                        <span class="hub-modal-nav-back on-nav-back disabled">
+                            <span class="fa fa-arrow-left"></span>
+                            <span>||str:ModalNavBack||</span>
+                        </span>
+                    </span>
+                    <h4 class="hub-modal-title">{{ title }}</h4>
+                    <span class="hub-modal-close on-close">
+                        <span class="fa fa-times"></span>
+                    </span>
+                    <span class="hub-modal-deeplink on-deeplink" style="display: none;">
+                        <span class="fa fa-share-square-o"></span>
+                    </span>
+                </div>
+                <div class="hub-modal-body">
+                    <div class="hub-modal-body-inner"></div>
+                </div>
+                <div class="hub-modal-footer" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="Modal-Backdrop">
+        <div class="hub-modal-backdrop" style="opacity: 0;"></div>
+    </div>
+
+    <!-- model: none -->
+    <div id="Iframe-Modal-Content">
+        <iframe src="{{ Url }}" class="iframe-modal-iframe"></iframe>
+    </div>
+
+    <!-- model: none -->
+    <div id="Html-Modal-Content">
+        <div class="modal-html-body">{{ Content }}</div>
+    </div>
+
+    <!-- model: object -->
+    <div id="Modal-Deeplink-Message">
+        <div class="hub-modal-deeplink-msg" style="display: none;">
+            <div class="row title-row">
+                <div class="col-xs-6">
+                    <span class="hub-modal-deeplink-title">||str:ModalDeepLinkTitle||</span>
+                </div>
+                <div class="col-xs-6 hub-modal-deeplink-close">
+                    <span class="fa fa-times on-close-deeplink hub-modal-deeplink-close-icon"></span>
+                </div>
+            </div>
+            <div class="hub-modal-deeplink-msg-txt">
+                ||str:ModalDeepLinkMessage||
+                <span class="on-deeplink-link hub-modal-deeplink-url">{{ URL }}</span>
+            </div>
+            <div class="hub-modal-deeplink-copy">
+                <span class="on-deeplink-copy hub-modal-deeplink-copy-link">||str:ModalDeepLinkCopy||</span>
+                <input class="deeplink-copy-data" type="text" value="{{ URL }}" />
+            </div>
+        </div>
+    </div>
+    
+    <!-- model: WidgetModel -->
+    <div id="Nav-Search-Widget-Result">
+        <li class="nav-search-widget" data-pluginid="{{ PluginId }}">
+            <div class="row nav-search-widget-inner">
+                <div class="col-xs-10">
+                    <div class="nav-search-widget-txt">{{ Name }}</div>
+                </div>
+                <div class="col-xs-2">
+                    <span class="fa fa-plus-square widget-result-add on-add-widget" data-toggle="tooltip" data-placement="top" title="||str:SearchResultAdd||"></span>
+                    <span class="fa fa-expand widget-result-appmode on-launch-widget" data-toggle="tooltip" data-placement="top" title="||str:SearchResultAppmode||"></span>
+                </div>
+                <div>{{ Description }}</div>
+            </div>
+        </li>
+    </div>
+
+    <!-- model: ServiceModel -->
+    <div id="Nav-Search-Service-Result">
+        <li class="nav-search-service" data-pluginid="{{ PluginId }}">
+            <div class="service-link on-launch-service">{{ Name }}</div>
+            <div>{{ Description }}</div>
+        </li>
+    </div>
+
+    <!-- model: AlertModel -->
+    <div id="Alert-Item">
+        <div class="hb-alert-item" data-alertid="{{ AlertId }}">
+            <div class="row">
+                <div class="col-xs-2 hb-alert-icon-col">
+                    <div class="hb-alert-item-icon"></div>
+                </div>
+                <div class="col-xs-10 hb-alert-data-col">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <div class="hb-alert-item-title on-view-alert">{{ Title }}</div>
+                        </div>
+                        <div class="col-xs-2 hb-dismiss-alert-col">
+                            <span class="fa fa-times on-dismiss-alert hb-dismiss-alert" data-toggle="tooltip" data-placement="top" title="||str:AlertDismiss||"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <div class="hb-alert-item-description">{{ Description }}</div>
+                            <div class="hb-alert-item-timestamp">{{ TimestampUI }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: NewsChannelModel -->
+    <div id="Channel-List-Item">
+        <div class="news-channel-list-item" data-channelid="{{ ChannelId }}">
+            <span class="news-channel-list-txt on-view-channel">{{ Name }}</span>
+            <span class="news-channel-count-badge">
+                <span class="news-channel-count"></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- model: NewsArticleModel -->
+    <div id="News-Article-Item">
+        <div class="news-article-item" data-channelid="{{ ChannelId }}" data-articleid="{{ ArticleId }}" data-status="{{ Status }}">
+            <div class="row">
+                <div class="col-xs-1 checkbox-container">
+                    <div class="checkbox">
+                        <input class="article-select form-control" type="checkbox" />
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                    <div class="article-isnew-inner">
+                        <span class="article-isnew">||str:NewArticle||</span>
+                    </div>
+                </div>
+                <div class="col-xs-6 article-name-rel">
+                    <div class="article-name">
+                        <span class="article-name-inner on-view-article">{{ Title }}</span>
+                    </div>
+                </div>
+                <div class="col-xs-3 article-date-container">
+                    <span class="article-date">{{ TimestampUI }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="News-Page-Element">
+        <div class="news-article-page"></div>
+    </div>
+
+    <!-- model: none -->
+    <div id="News-Pagination-Container">
+        <div>
+            <div class="news-pagination">
+                <div class="news-pagination-prev on-previous-page">
+                    <span class="fa fa-chevron-left"></span>
+                </div>
+                <div class="news-pagination-icons">
+                    <span class="news-pagination-icon-list"></span>
+                </div>
+                <div class="news-pagination-next on-next-page">
+                    <span class="fa fa-chevron-right"></span>
+                </div>
+            </div>
+            <div class="news-page-count">
+                <span class="news-page-count-txt news-page-count-current"></span>
+                <span class="news-page-count-txt">/</span>
+                <span class="news-page-count-txt news-page-count-total"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="News-Pagication-Icon">
+        <div class="news-pagination-icon on-select-page" data-pageindex="{{ Index }}"></div>
+    </div>
+
+    <!-- model: none -->
+    <div id="News-Pagination-Button"></div>
+
+    <!-- model: none -->
+    <div id="Toast-Message">
+        <div class="hb-toast-msg" style="opacity: 0;">
+            <div class="hb-toast-msg-inner">
+                <div class="row">
+                    <div class="col-xs-1 hb-toast-icon-parent">
+                        <span class="hb-toast-icon"></span>
+                    </div>
+                    <div class="col-xs-10">
+                        <p class="hb-toast-msg-txt">{{ Text }}</p>
+                    </div>
+                    <div class="col-xs-1 hb-toast-close-parent">
+                        <span class="hb-toast-close fa fa-times"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="Dev-Menu">
+        <div id="devmenu">
+            <div id="devmenu-inner">
+                <div id="devmenu-container">
+                    <ol id="devmenu-list">
+                        <li>
+                            <a href="javascript:;" id="dev-force-heartbeat">Force Heartbeat</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" id="dev-remove-all">Remove all widgets</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" id="dev-service-center">Go To Service Center</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" id="dev-to-debug">Go To /Debug/</a>
+                        </li>
+                    </ol>
+                </div>
+                <div id="devmenu-trigger">
+                    <div id="devmenu-trigger-inner">
+                        <div id="devmenu-trigger-txt">Dev Menu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: DesktopModel -->
+    <div id="Desktop-Menu-Group">
+        <div class="hb-desktop-menu-group">
+            <div class="hb-deskop-group-txt">{{ Group }}</div>
+        </div>
+    </div>
+
+    <!-- model: DesktopModel -->
+    <div id="Desktop-Menu-Item">
+        <div class="hb-desktop-menu-item" data-desktopid="{{ DesktopId }}">
+            <div class="row">
+                <div class="col-xs-11">
+                    <span class="hb-desktop-menu-item-name on-switch-desktop">{{ Name }}</span>
+                </div>
+                <div class="col-xs-1">
+                    <div class="hb-desktop-menu-item-options on-desktop-options">
+                        <span class="fa fa-ellipsis-v"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: DesktopModel (this is used to create and rename desktops) -->
+    <div id="Desktop-Name">
+        <div class="hb-desktop-name" style="display: none;">
+            <div class="row">
+                <div class="col-xs-10">
+                    <input class="form-control desktop-name-input" type="text" maxlength="50" placeholder="||str:NewDesktopPlaceholder||" />
+                </div>
+                <div class="col-xs-1">
+                    <span class="fa fa-check desktop-confirm-btn on-confirm" data-toggle="tooltip" data-placement="top" title="||str:DesktopCreateTooltip||"></span>
+                </div>
+                <div class="col-xs-1">
+                    <span class="fa fa-ban desktop-cancel-btn on-cancel" data-toggle="tooltip" data-placement="top" title="||str:DesktopCancelTooltip||"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: DesktopModel -->
+    <div id="Desktop-Options">
+        <div class="hb-desktop-options" data-desktopid="{{ DesktopId }}" style="opacity: 0;">
+            <div class="hb-desktop-option-row on-rename" data-action="rename">
+                <span class="fa fa-pencil desktop-option-icon"></span>
+                <span class="desktop-option-txt">||str:DesktopOptionRename||</span>
+            </div>
+            <div class="hb-desktop-option-row on-delete" data-action="delete">
+                <span class="fa fa-trash-o desktop-option-icon"></span>
+                <span class="desktop-option-txt">||str:DesktopOptionDelete||</span>
+            </div>
+            <div class="hb-desktop-option-row on-share" data-action="share">
+                <span class="fa fa-share-alt desktop-option-icon"></span>
+                <span class="desktop-option-txt">||str:DesktopOptionShare||</span>
+            </div>
+            <div class="hb-desktop-option-row on-clone" data-action="clone">
+                <span class="fa fa-files-o desktop-option-icon"></span>
+                <span class="desktop-option-txt">||str:DesktopOptionClone||</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="Confirmation-Dialog">
+        <p>{{ Message }}</p>
+    </div>
+
+    <!-- model: none -->
+    <div id="Confirmation-Dialog-Button">
+        <button class="btn confirmation-btn on-close">{{ ButtonText }}</button>
+    </div>
+
+    <!-- model: none -->
+    <div id="Client-Expiration">
+        <div id="expiration">
+            <div id="expiration-inner">
+                <div id="expiration-content">
+                    <div>||str:ExpirationTitle||</div>
+                    <div>||str:ExpirationBody||</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="ContentLibrary-DD-Item">
+        <li class="clib-dd-item" data-filter="{{ Filter }}" data-key="{{ Key }}">{{ Value }}</li>
+    </div>
+
+    <!-- model: WidgetModel -->
+    <div id="ContentLibrary-Widget-Item">
+        <div class="clib-item" data-pluginid="{{ PluginId }}">
+            <div class="clib-item-inner">
+                <div class="clib-options">
+                    <span class="clib-option on-access-control" data-toggle="tooltip" data-placement="top" title="||str:ContentLibraryAccessControlTooltip||">
+                        <span class="fa fa-users clib-option-icon"></span>
+                    </span>
+                    <span class="clib-option on-widget-appmode" data-toggle="tooltip" data-placement="top" title="||str:ContentLibraryOptionAppmode||">
+                        <span class="fa fa-rocket clib-option-icon"></span>
+                    </span>
+                    <span class="clib-option on-widget-help" data-toggle="tooltip" data-placement="top" title="||str:ContentLibraryOptionHelp||">
+                        <span class="fa fa-question-circle-o clib-option-icon"></span>
+                    </span>
+                </div>
+                <div class="clib-owned">
+                    <span class="fa fa-check clib-owned-icon"></span>
+                </div>
+                <div class="clib-item-image on-widget-add" data-toggle="tooltip" data-placement="bottom" title="{{ Description }}"></div>
+                <div class="clib-item-title">
+                    <span class="clib-item-title-txt">{{ Name }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="News-Channel-Subscriber">
+        <div class="channel-list">
+            <div class="channel-list-inner"></div>
+        </div>
+    </div>
+
+    <!-- model: NewsChannelModel -->
+    <div id="News-Channel-Subscribe-Item">
+        <div class="news-channel-subscribe-item on-toggle-subscribe" data-channelid="{{ ChannelId }}">
+            <div class="news-channel-subscribe-item-inner">
+                <div class="subscribed-icon">
+                    <span class="fa fa-check"></span>
+                </div>
+                <div class="subscribe-channel-icon" style="background-image: url('data:image/png;base64,{{ Icon }}')"></div>
+                <div class="subscribe-channel-name">{{ Name }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="News-Channel-No-Icon">
+        <span class="fa fa-4x fa-newspaper-o center-all"></span>
+    </div>
+
+    <!-- model: none -->
+    <div id="Loading-Spinner">
+        <div class="hub-loading">
+            <div class="hub-loading-inner">
+                <div class="loading-icon"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: BroadcastModel -->
+    <div id="BroadcastMessage">
+        <div class="hub-broadcast">
+            <div class="hub-broadcast-title">{{ Title }}</div>
+            <div class="hub-broadcast-subtext">{{ StartTime }} - Sent By: {{ Author }}</div>
+            <p class="hub-broadcast-message">{{ Message }}</p>
+        </div>
+    </div>
+
+    <!-- model: Object -->
+    <div id="Hub-Balloon">
+        <div class="hub-balloon">
+            <div class="hub-balloon-inner">
+                <div class="hub-balloon-top" data-orient="bottom">
+                    <div class="hub-balloon-top-arrow"></div>
+                </div>
+                <div class="hub-balloon-mid">
+                    <div class="hub-balloon-left" data-orient="right">
+                        <div class="hub-balloon-left-arrow"></div>
+                    </div>
+                    <div class="hub-balloon-content">
+                        <div class="hub-balloon-header">
+                            <span class="hub-balloon-title" style="display: none;">{{ Title }}</span>
+                            <span class="hub-balloon-close-icon on-close fa fa-times" style="display: none;"></span>
+                        </div>
+                        <span class="hub-balloon-text">{{ Message }}</span>
+                    </div>
+                    <div class="hub-balloon-right" data-orient="left">
+                        <div class="hub-balloon-right-arrow"></div>
+                    </div>
+                </div>
+                <div class="hub-balloon-bot" data-orient="top">
+                    <div class="hub-balloon-bot-arrow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- model: none -->
+    <div id="Walkthrough-Widgets">
+        <div class="owl-carousel owl-theme" style="display: none;">
+            <div class="item walkthrough-item">
+                <p>||str:Walkthrough_Step11_Slide1||</p>
+                <img class="walkthrough-img" data-src="res/img/walkthrough-step1.png" />
+            </div>
+            <div class="item walkthrough-item">
+                <p>||str:Walkthrough_Step11_Slide2||</p>
+                <img class="walkthrough-img" data-src="res/img/walkthrough-step2.png" />
+            </div>
+            <div class="item walkthrough-item">
+                <p>||str:Walkthrough_Step11_Slide3||</p>
+                <img class="walkthrough-img" data-src="res/img/walkthrough-step3.png" />
+            </div>
+        </div>
+    </div>
+
+</div>
