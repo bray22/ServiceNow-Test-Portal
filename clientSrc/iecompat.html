@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>TheHub</title>
+
+        <style>
+            html {
+                font-size: 2vw;
+            }
+
+            body {
+                background: #283048;
+                background: -webkit-linear-gradient(to left, #283048, #859398);
+                background: linear-gradient(to left, #283048, #859398);
+                text-align: center;
+                color: #FFF;
+            }
+
+            div {
+                padding: 30px;
+            }
+
+            img {
+                width: 768px;
+                height: 265px;
+            }
+
+            a {
+                color: white;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            "use strict";
+
+            function isIE () {
+                return !!navigator.userAgent.match(/Trident\/(\d+)/);
+            }
+
+            function toHub () {
+                var href = location.href;
+
+                if (href.indexOf("prev") !== -1) {
+                    location.href = href.substring(href.indexOf("?prev=") +6, href.length)
+                } else {
+                    location.href = "index.html";
+                }
+            }
+
+            if (!isIE()) {
+                toHub();
+            }
+        </script>
+        <div>
+            <img src="./res/img/logo-full-768.png" />
+
+            <h2>Browser Not Supported</h2>
+
+            <p>We've detected your Internet Explorer browser to be in Compatibility mode or below the minimum required version for TheHub to work. When using IE, please make sure you disable Compatibility View/Mode setting for this site.</p>
+
+            <p>
+                <a href="https://msdn.microsoft.com/en-us/library/gg622935(v=vs.85).aspx">Understanding the Compatibility view list</a>
+            </p>
+            
+            <p>
+                <a href="javascript:toHub();">Try again</a>
+            </p>
+        </div>
+    </body>
+</html>

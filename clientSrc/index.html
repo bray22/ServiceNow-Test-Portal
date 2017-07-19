@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>TheHub</title>
+
+        <meta charset="UTF-8">
+        <meta name="theme-color"            content="#007DB8" />
+        <meta name="Classification"         content="Business" />
+        <meta name="author"                 content="TheHub Dev Team, thehub.dev.team@dell.com" />
+        <meta name="HandheldFriendly"       content="False" />
+        <meta name="robots"                 content="nofollow" />
+        <meta name="viewport"               content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"      href="res/favicon/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114"    href="res/favicon/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72"      href="res/favicon/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144"    href="res/favicon/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60"      href="res/favicon/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120"    href="res/favicon/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76"      href="res/favicon/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152"    href="res/favicon/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" sizes="196x196"           href="res/favicon/favicon-196x196.png"  />
+        <link rel="icon" type="image/png" sizes="96x96"             href="res/favicon/favicon-96x96.png"  />
+        <link rel="icon" type="image/png" sizes="32x32"             href="res/favicon/favicon-32x32.png"  />
+        <link rel="icon" type="image/png" sizes="16x16"             href="res/favicon/favicon-16x16.png"  />
+        <link rel="icon" type="image/png" sizes="128x128"           href="res/favicon/favicon-128.png"  />
+        <meta name="application-name"                               content="&nbsp;"/>
+        <meta name="msapplication-TileColor"                        content="#FFFFFF" />
+        <meta name="msapplication-TileImage"                        content="res/favicon/mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo"                  content="res/favicon/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo"                content="res/favicon/mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo"                  content="res/favicon/mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo"                content="res/favicon/mstile-310x310.png" />
+
+        <link rel="stylesheet" type="text/css" href="css/reset.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/lib.all.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+        <script src="js/lib/require-2.2.0.js" data-main="js/main" type="text/javascript"></script>
+        
+    </head>
+    <body class="initial-load">
+        <script src="js/util/ie.js" type="text/javascript"></script>
+
+        <div id="loading" class="hub-page" data-page="loading">
+            <div id="loading-bkg"></div>
+            <div id="loading-center">
+                <div id="loading-content">
+                    <img id="loading-image" src="./res/img/logo-full-768.png" />
+                    <div id="loading-slider">
+                        <div id="loading-slider-line"></div>
+                    </div>
+                    <div id="loading-slow-message" style="opacity: 0;">TheHub</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fatalerror" class="hub-page" data-page="fatal" style="display: none;">
+            <div class="temp-header">
+                <div class="temp-hublogo"></div>
+            </div>
+            <div id="fatalerror-body">
+                <div id="fatalerror-left">
+                    <h1>||str:FatalOops||</h1>
+                    <p>||str:FatalMessage||</p>
+                    <button class="btn" onclick="window.location.reload(true);">
+                        <span class="fa fa-refresh"></span>
+                        <span>||str:FatalButton||</span>
+                    </button>
+                </div>
+                <div id="fatalerror-right"></div>
+            </div>
+        </div>
+
+        <div id="invalid" class="hub-page" data-page="invalid" style="display: none;">
+            <div class="temp-header">
+                <div class="temp-hublogo"></div>
+            </div>
+            <div id="invalid-browser-top">
+                <div id="invalid-browser-inner">
+                    <h1>||str:InvalidTitle||</h1>
+                    <p id="invalid-message">||str:InvalidMessage||</p>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <div id="chrome-icon" onclick="window.location.href = 'https://www.google.com/chrome/browser/';"></div>
+                        </div>
+                        <div class="col-xs-3">
+                            <div id="firefox-icon" onclick="window.location.href = 'https://www.mozilla.org/firefox';"></div>
+                        </div>
+                        <div class="col-xs-3">
+                            <div id="ie-icon" onclick="window.location.href = 'https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads';"></div>
+                        </div>
+                        <div class="col-xs-3">
+                            <div id="safari-icon" onclick="window.location.href = 'https://support.apple.com/downloads/#safari';"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="maintenance" class="hub-page" data-page="maintenance" style="display: none;">
+            <div class="temp-header">
+                <div class="temp-hublogo"></div>
+            </div>
+            <div id="maintenance-body">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div id="maintenence-img">
+                            <div id="maintenence-img-inner"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div id="maintenence-txt">
+                            <h2>||str:MaintenancePageTitle||</h2>
+                            <p>||str:MaintenancePageText1||<br/>||str:MaintenancePageText2||</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="desktop" class="hub-page" data-page="desktop" style="display: none;">
+            <div id="content">
+                <div id="content-header">
+                    <div id="hub-navbar">
+                        <div id="hub-navbar-left">
+                            <div id="hub-navbar-brand">
+                                <img id="nav-logo-big" class="on-reload-hub" src="./res/img/logo-nav-large.png" />
+                                <img id="nav-logo-small" class="on-reload-hub" src="./res/img/logo-nav-small.png" />
+                            </div>
+                            <div id="hub-navbar-desktops">
+                                <div class="on-open-desktop-menu">
+                                    <span class="fa fa-desktop navbar-icon"></span>
+                                    <span id="desktop-name" class="nav-desktop-el">||str:Desktops||</span>
+                                    <span class="caret nav-desktop-el"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="hub-navbar-right">
+                            <div id="hub-navbar-right-icon-group">
+                                <div id="hub-navbar-incident" class="navbar-icon-top on-submit-incident" data-toggle="tooltip" data-placement="bottom" title="||str:IncidentIconTooltip||">
+                                    <span id="hub-navbar-incident-icon" class="fa fa-wrench navbar-icon pointer-compress"></span>
+                                </div>
+                                <div id="hub-navbar-news" class="navbar-icon-top on-open-news" data-toggle="tooltip" data-placement="bottom" title="||str:NewsIconTooltip||">
+                                    <span class="fa fa-newspaper-o navbar-icon pointer-compress"></span>
+                                    <span id="hb-news-count">
+                                        <span id="hb-news-count-txt"></span>
+                                    </span>
+                                </div>
+                                <div id="hub-navbar-alerts" class="navbar-icon-top on-open-alert-menu" data-toggle="tooltip" data-placement="bottom" title="||str:AlertIconTooltip||">
+                                    <span id="hub-navbar-alert-icon" class="fa fa-bell navbar-icon pointer-compress"></span>
+                                    <span id="hb-alert-count">
+                                        <span id="hb-alert-count-txt"></span>
+                                    </span>
+                                </div>
+                                <div id="hub-navbar-help" class="navbar-icon-top on-open-help-menu" data-toggle="tooltip" data-placement="bottom" title="||str:HelpIconTooltip||">
+                                    <span class="fa fa-question-circle navbar-icon pointer-compress"></span>
+                                </div>
+                                <div id="hub-navbar-library" class="navbar-icon-top on-open-library" data-toggle="tooltip" data-placement="bottom" title="||str:ContentLibraryIconTooltip||">
+                                    <span class="fa fa-briefcase navbar-icon pointer-compress"></span>
+                                </div>
+                            </div>
+                            <div id="hub-navbar-search">
+                                <div class="input-group">
+                                    <input id="navbar-search" type="text" class="form-control" placeholder="||str:NavSearchPlaceholder||" />
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-search"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="hub-navbar-user" class="on-user-info">
+                                <div id="hub-navbar-user-img" class="pointer-compress" data-toggle="tooltip" data-placement="bottom" title=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-body">
+                    <div id="gridster-backdrop" style="display: none; opacity: 0;"></div>
+                    <div id="desktop-container">
+                        <div id="gridster-container">
+                            <div id="gridster-container-inner"></div>
+                        </div>
+                    </div>
+                    <div id="livewire">
+                        <div id="livewire-inner">
+                            <div id="livewire-trigger">
+                                <div id="livewire-trigger-inner">
+                                    <div id="livewire-trigger-txt" class="on-show-livewire">||str:LivewireTrigger||</div>
+                                </div>
+                            </div>
+                            <div id="livewire-container">
+                                <div id="livewire-plugin"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="powered-by">
+                        <span>||str:HubPoweredBy||</span>
+                    </div>
+                </div>
+            </div>
+            <div id="desktop-menu" style="opacity: 0; display: none;">
+                <div id="create-desktop">
+                    <span id="create-desktop-link">||str:CreateNewDesktop||</span>
+                </div>
+                <div id="desktop-menu-list"></div>
+                <div class="divider"></div>
+                <div id="shared-desktops">
+                    <span id="on-shared-desktops" class="desktop-menu-shared-link">||str:SharedDesktopLink||</span>
+                </div>
+            </div>
+            <div id="navbar-search-results" style="opacity: 0; display: none;">
+                <div class="search-group-title">||str:NavSearchWidgetGroup||</div>
+                <ul class="search-group-widgets"></ul>
+                <div class="divider"></div>
+                <div class="search-group-title">||str:NavSearchServiceGroup||</div>
+                <ul class="search-group-services"></ul>
+                <div class="divider"></div>
+                <div class="emc-search on-search-emc">||str:NavSearchSearchEMC||</div>
+            </div>
+            <div id="hub-help-menu" style="opacity: 0; display: none;">
+                <ul>
+                    <li class="help-line-item">
+                        <span class="hb-help-link on-release-notes">||str:HelpMenuReleaseNotes||</span>
+                    </li>
+                </ul>
+                <div class="divider"></div>
+                <ul>
+                    <li class="help-line-item">
+                        <span class="hb-help-link on-report-problem">||str:HelpMenuReportProblem||</span>
+                    </li>
+                    <li class="help-line-item">
+                        <span class="hb-help-link on-request-enhancement">||str:HelpMenuRequestEnhancement||</span>
+                    </li>
+                    <li class="help-line-item">
+                        <span class="hb-help-link on-ask-question">||str:HelpMenuAskQuestion||</span>
+                    </li>
+                </ul>
+                <div class="divider"></div>
+                <ul>
+                    <li class="help-line-item">
+                        <span class="hb-help-link on-walkthrough">||str:HelpMenuWalkthrough||</span>
+                    </li>
+                    <li class="help-line-item">
+                        <span class="hb-help-link on-wiki">||str:HelpMenuWiki||</span>
+                    </li>
+                    <li class="help-line-item">
+                        <span class="hb-help-link on-style-guide">||str:HelpMenuStyleGuide||</span>
+                    </li>
+                    <li class="help-line-item">
+                        <span class="hb-help-link on-faq">||str:HelpMenuFAQ||</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="alert-menu" style="opacity: 0; display: none;">
+                <div id="alert-menu-inner">
+                    <div id="alert-menu-header">
+                        <div class="row">
+                                <div class="col-xs-6">
+                                <h4 id="alert-menu-title">||str:AlertMenuTitle||</h4>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="hb-alert-subscriptions">
+                                    <span id="hb-alert-subscription-link" class="on-manage-subscriptions">||str:AlertMenuManageSubscriptions||</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="alert-menu-body">
+                        <div id="alert-menu-body-inner"></div>
+                    </div>
+                    <div id="alert-menu-footer">
+                        <div class="col-xs-6">
+                            <div class="hb-clear-alerts">
+                                <span id="hb-clear-alerts-link" class="on-clear-list">||str:AlertMenuClearList||</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="hb-view-all-alerts">
+                                <span id="hb-view-all-alerts-link" class="on-view-all">||str:AlertMenuViewAll||</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="clib" class="material-dropshadow" style="display: none;">
+                <div id="clib-content">
+                    <div id="clib-header">
+                        <div id="clib-header-title">||str:ContentLibraryTitle||</div>
+                        <div id="clib-close-btn" class="on-close">
+                            <span class="fa fa-2x fa-times"></span>
+                        </div>
+                    </div>
+                    <div id="clib-filters">
+                        <div id="clib-filters-inner-top">
+                            <div id="clib-filters-inner-top-row">
+                                <div class="clib-filter-item">
+                                    <div class="input-group clib-search-inputgroup">
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-search"></span>
+                                        </span>
+                                        <input id="clib-search" class="form-control" type="text" placeholder="||str:ContentLibrarySearchPlaceholder||" />
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-play"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="clib-filter-item">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle clib-filter-btn" data-toggle="dropdown">
+                                            <span id="clib-bu-dd-txt"></span>
+                                            <span>&nbsp;</span>
+                                            <span class="caret clib-filter-caret"></span>
+                                        </button>
+                                        <ul id="clib-bu-list" class="dropdown-menu"></ul>
+                                    </div>
+                                </div>
+                                <div class="clib-filter-item">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle clib-filter-btn" data-toggle="dropdown">
+                                            <span id="clib-role-dd-txt"></span>
+                                            <span>&nbsp;</span>
+                                            <span class="caret clib-filter-caret"></span>
+                                        </button>
+                                        <ul id="clib-role-list" class="dropdown-menu"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="clib-filters-inner-bottom">
+                            <div>
+                                <span id="clib-sortby">||str:ContentLibrarySortBy||</span>
+                                <span id="clib-alpha-lbl">
+                                    <span id="clib-alpha-lbl-txt" class="selected">||str:ContentLibrarySortAlpha||</span>
+                                </span>
+                                <span id="clib-pop-lbl">
+                                    <span id="clib-pop-lbl-txt">||str:ContentLibrarySortPopularity||</span>
+                                </span>
+                            </div>
+                            <div id="clib-sort-selector">
+                                <div id="clib-sort-selector-top" style="visibility: hidden;">
+                                    <div id="clib-sort-selector-line"></div>
+                                    <div id="clib-sort-selector-arrow-top">
+                                        <div id="clib-sort-selector-arrow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="clib-body">
+                        <div id="clib-body-inner">
+                            <div id="clib-body-widget-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="news" style="display: none;">
+                <div id="news-inner">
+                    <div id="news-header">
+                        <div id="news-header-inner">
+                            <div id="news-header-title">||str:NewsMenuTitle||</div>
+                            <div id="news-close-btn" class="on-close">
+                                <span class="fa fa-2x fa-times"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="news-body" class="container-fluid">
+                        <div id="news-body-inner" class="row">
+                            <div id="news-left-panel" class="col-xs-3">
+                                <div id="news-left-panel-inner">
+                                    <div id="news-channels-title">
+                                        <div id="news-channels-title-inner">
+                                            <div>||str:NewsSubscribeChannels||</div>
+                                        </div>
+                                    </div>
+                                    <div id="news-channels-options">
+                                        <div id="news-channels-options-inner">
+                                            <div id="news-options-top" class="dropdown">
+                                                <span class="fa fa-cog news-channel-option" data-toggle="dropdown"></span>
+                                                <ul class="dropdown-menu news-dd-menu">
+                                                    <li class="news-dd-option on-manage-channels">||str:NewsManageChannels||</li>
+                                                    <li class="news-dd-option on-subscribe">||str:NewsSubscribeChannels||</li>
+                                                </ul>
+                                            </div>
+                                            <span class="fa fa-plus news-channel-option on-new-channel" data-toggle="tooltip" data-placement="top" title="||str:NewsCreateChannel||"></span>
+                                        </div>
+                                    </div>
+                                    <div id="news-channel-list">
+                                        <div id="news-channel-list-inner">
+                                            <div id="news-channel-list-list"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="news-right-panel" class="col-xs-9">
+                                <div id="news-right-panel-inner">
+                                    <div id="news-content">
+                                        <div id="news-content-inner">
+                                            <div id="news-content-header">
+                                                <div id="news-content-header-inner" class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-xs-7 news-btn-container-all">
+                                                            <div class="row">
+                                                                <div class="news-btn-container">
+                                                                    <div class="news-btn">
+                                                                        <label class="news-btn-label">
+                                                                            <input id="news-select-all" type="checkbox" />
+                                                                            <span class="news-btn-label">||str:NewsSelectAll||</span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="news-btn-container">
+                                                                    <div class="news-btn on-mark-all">
+                                                                        <span class="fa fa-book"></span>
+                                                                        <span class="news-btn-label">||str:NewsMarkAsRead||</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="news-btn-container new-article">
+                                                                    <div class="news-btn on-new-article">
+                                                                        <span class="fa fa-plus"></span>
+                                                                        <span class="news-btn-label">||str:NewsNewArticle||</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-5 news-search-btn-input">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <span class="fa fa-search"></span>
+                                                                </span>
+                                                                <input class="form-control on-article-search" type="text" placeholder="||str:NewsArticleSearchPlaceholder||"/>
+                                                                <span class="input-group-addon news-search-play-addon">
+                                                                    <span class="fa fa-play"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="news-content-body">
+                                                <div id="news-content-body-inner">
+                                                    <div id="news-content-body-content"></div>
+                                                </div>
+                                            </div>
+                                            <div id="news-content-footer">
+                                                <div id="news-content-footer-inner"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="toast-container"></div>
+        </div>
+    </body>
+</html>
